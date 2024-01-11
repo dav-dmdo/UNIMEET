@@ -2,12 +2,12 @@
 
 UNIMEET is a React-based web platform designed for efficient management of student groups at Universidad Metropolitana.
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) 
-![](https://img.shields.io/github/forks/pandao/editor.md.svg) 
-![](https://img.shields.io/github/tag/pandao/editor.md.svg) 
-![](https://img.shields.io/github/release/pandao/editor.md.svg) 
-![](https://img.shields.io/github/issues/pandao/editor.md.svg)
-![](https://img.shields.io/bower/v/editor.md.svg)
+![](https://img.shields.io/github/stars/dav-dmdo/unimeet) 
+![](https://img.shields.io/github/forks/dav-dmdo/unimeet) 
+![](https://img.shields.io/github/issues/dav-dmdo/unimeet)
+![](https://img.shields.io/github/tag/dav-dmdo/unimeet) 
+![](https://img.shields.io/github/release/dav-dmdo/unimeet) 
+
 
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-success)](https://github.com/dav-dmdo/unimeet)
