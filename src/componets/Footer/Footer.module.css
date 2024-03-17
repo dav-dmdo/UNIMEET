@@ -1,0 +1,39 @@
+.container {
+    
+    background-color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.imgFooter {
+    height: 100px;
+    width: 570px;
+}
+.direccion {
+    color: #000;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 24px; /* 96% */
+}
+
+.descripcion {
+    color: #FF8006;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+
+.copyright{
+    color: #000;
+text-align: center;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: 24px; /* 171.429% */
+}
