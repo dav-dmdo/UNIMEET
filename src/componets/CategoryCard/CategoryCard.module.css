@@ -14,12 +14,12 @@ width: 199px;
 height: 36px;
 flex-shrink: 0;
 color: #FFF;
-font-size: 40px;
+font-size: 21px;
 font-style: normal;
 font-weight: 900;
 line-height: 24px; /* 37.5% */
 margin-bottom: 2%;
-margin-top: -20%;
+margin-top: -8%;
 z-index: 3;
 display: flex;
         
@@ -29,7 +29,7 @@ display: flex;
 
 .text{
 color: #FFF;
-margin-top: 2%;
+margin-top: 3%;
 font-size: 20px;
 font-style: normal;
 font-weight: 400;

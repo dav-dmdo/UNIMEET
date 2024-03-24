@@ -2,9 +2,10 @@
     display: flex;
     background-color: #FFF;
     align-items: center;
-    justify-content: center;
     align-content: center;
     padding-top: 2%;
+    flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 body {
@@ -13,21 +14,24 @@ body {
 
 .category {
     margin: auto;
-    padding-bottom: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 2%;
+   
+  margin-bottom: 20px;
 }
 
-/* Media queries for smaller screens */
-@media only screen and (max-width: 500px) {
-    .mainBox {
-      flex-direction: column; /* Stack elements vertically */
-      padding-top: 5%;
-    }
-  
+/* Apply different styles for smaller screens */
+@media (max-width: 768px) {
     .category {
-      padding-bottom: 10%;
+      width: 45%;
+    }
+  }
+  
+  /* Apply different styles for even smaller screens */
+  @media (max-width: 480px) {
+    .category {
+      width: 100%;
     }
   }
