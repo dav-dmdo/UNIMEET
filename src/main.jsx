@@ -11,6 +11,8 @@ import {Navbar} from "./componets/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
+import User from './pages/User/User.jsx';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -23,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/IniciarSesion' element={<IniciarSesion />}/>
           <Route path='/Agrupaciones' element={<Agrupaciones />}/>
           <Route path='/agrupacion' element={<Agrupacion />}/>
+          <Route path='/User' element={<User />}/>
         </Route> 
       </Routes>
     </BrowserRouter>

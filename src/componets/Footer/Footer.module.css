@@ -1,5 +1,5 @@
 .container {
-    
+    margin: auto;
     background-color: white;
     padding: 0 20px;
     display: flex;
@@ -37,3 +37,27 @@ font-style: normal;
 font-weight: 300;
 line-height: 24px; /* 171.429% */
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+      flex-wrap: wrap;
+    }
+  
+    .imgFooter {
+      height: 80px;
+    }
+  
+    .direccion {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  
+    .descripcion {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .copyright {
+      line-height: 20px;
+    }
+  }

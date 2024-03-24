@@ -23,7 +23,9 @@ export function Navbar(){
                     <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
                     </li>
                     <li id={styles.usuario}>
+                        <Link to="/User">
                         <img className={styles.image} src="./src/assets/User.png" alt="" />
+                        </Link>
                     </li>
                     
                 </ul>
