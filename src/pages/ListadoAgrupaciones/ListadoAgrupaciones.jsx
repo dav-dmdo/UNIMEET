@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./ListadoAgrupaciones.module.css";
-import useGroups from '../../componets/Hooks/useGroups';
+import useGroups from '../../controllers/Hooks/useGroups';
 
 export function ListadoAgrupaciones() {
   const groups=useGroups();
