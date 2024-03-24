@@ -7,7 +7,7 @@ import {Categorias} from "./pages/Categorias/Categorias.jsx"
 import {Agrupaciones} from "./pages/Agrupaciones/Agrupaciones.jsx"
 import {QuienesSomos} from "./pages/QuienesSomos/QuienesSomos.jsx"
 import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
-import {Navbar} from "./componets/Navbar/Navbar.jsx"
+import {Navbar} from "./components/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
