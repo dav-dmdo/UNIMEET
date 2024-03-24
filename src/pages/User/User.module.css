@@ -1,0 +1,110 @@
+.image{
+    max-width: 100%; /* Ensures the image doesn't exceed its container */
+  height: auto; /* Allows the image to scale proportionally */
+    border-radius: 192px;
+    border: 3.2px solid #FFF;
+    background: url("./src/assets/userPage.png") lightgray 50% / cover no-repeat;
+    width: 192px;
+    height: 192px;
+    flex-shrink: 0;
+    padding: auto;
+}
+
+.textName{
+    
+color: #FFF;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 120% */
+text-decoration-line: underline;
+flex-shrink: 0;
+margin-top: 10%;
+text-align: center;
+}
+
+.titles{
+width: 466.56px;
+height: 48px;
+flex-shrink: 0;
+color: #FFF;
+font-size: 38.4px;
+font-style: normal;
+font-weight: 500;
+line-height: 46.08px; /* 120% */
+margin-bottom: 5%;
+}
+.submitBtn{
+color: #FF8006;
+text-align: center;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+
+line-height:  120% ;
+border-radius: 93px;
+background: #FFF;
+width: 186px;
+height: 27px;
+flex-shrink: 0;
+margin-top: 10%;
+border:#6e6e70;
+}
+
+
+.inputContainer label{
+    width: 186px;
+height: 27px;
+flex-shrink: 0;
+    color: #FFF;
+
+    font-size: 18px;
+    font-style: normal;
+    line-height: 24px; /* 133.333% */
+    color:  #FFFFFF;
+margin: 2%;
+    
+
+}
+
+.inputContainer input{
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px 10px 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    background-color: #fff;
+    border: 1px solid #d0d5dd;
+    width: 100%;
+    margin: 2%;
+}
+@media (min-width: 500px) {
+    .inputContainer input {
+        width: 450px;
+    }
+    .rightside{
+        padding-left: 5%;
+    }
+    }
+
+.userCard {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.leftside {
+    text-align: center;
+    width: auto;
+}
+
+.rightside {
+    text-align: left;
+    width: auto;
+}

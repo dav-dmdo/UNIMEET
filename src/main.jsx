@@ -10,6 +10,8 @@ import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
 import {Navbar} from "./componets/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import './index.css'
+import User from './pages/User/User.jsx';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -21,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/Categorias' element={<Categorias />}/>
           <Route path='/IniciarSesion' element={<IniciarSesion />}/>
           <Route path='/Agrupaciones' element={<Agrupaciones />}/>
+          <Route path='/User' element={<User />}/>
         </Route> 
       </Routes>
     </BrowserRouter>
