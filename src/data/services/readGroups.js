@@ -1,5 +1,5 @@
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase/config';
+import { db } from '../firebase';
 
 export async function getGroups(){
     const groupsCollection =collection(db, 'agrupaciones');
