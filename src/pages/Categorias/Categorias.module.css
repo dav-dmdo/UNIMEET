@@ -1,0 +1,33 @@
+.mainBox {
+    display: flex;
+    background-color: #FFF;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 2%;
+}
+
+body {
+    background-color: #FFF;
+}
+
+.category {
+    margin: auto;
+    padding-bottom: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2%;
+}
+
+/* Media queries for smaller screens */
+@media only screen and (max-width: 500px) {
+    .mainBox {
+      flex-direction: column; /* Stack elements vertically */
+      padding-top: 5%;
+    }
+  
+    .category {
+      padding-bottom: 10%;
+    }
+  }
