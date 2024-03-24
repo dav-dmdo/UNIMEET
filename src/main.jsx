@@ -9,6 +9,7 @@ import {QuienesSomos} from "./pages/QuienesSomos/QuienesSomos.jsx"
 import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
 import {Navbar} from "./componets/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
+import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/Categorias' element={<Categorias />}/>
           <Route path='/IniciarSesion' element={<IniciarSesion />}/>
           <Route path='/Agrupaciones' element={<Agrupaciones />}/>
+          <Route path='/agrupacion' element={<Agrupacion />}/>
         </Route> 
       </Routes>
     </BrowserRouter>
