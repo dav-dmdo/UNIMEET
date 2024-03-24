@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import App from './App.jsx'
 import {Home} from "./pages/Home/Home.jsx"
 import {Categorias} from "./pages/Categorias/Categorias.jsx"
 import {Agrupaciones} from "./pages/Agrupaciones/Agrupaciones.jsx"
 import {QuienesSomos} from "./pages/QuienesSomos/QuienesSomos.jsx"
 import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
-import {Navbar} from "./components/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'

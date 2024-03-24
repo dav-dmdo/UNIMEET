@@ -7,6 +7,7 @@ const GroupImage = ({groupImg, altImg, text, color}) => {
     orange: "orange",
     black: "black",
   }
+
   const colorStyle = colorObj[color];
 
   return (
