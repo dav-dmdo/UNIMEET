@@ -1,6 +1,9 @@
 import styles from "./User.module.css";
 export default function User() {
+  
+    {/*TODO - Conect to functional buttons*/}
   return (
+
     <div className={styles.userCard}>
         <div className={styles.leftside}>
         <img className={styles.image} src="./src/assets/userPage.png" alt="" />
