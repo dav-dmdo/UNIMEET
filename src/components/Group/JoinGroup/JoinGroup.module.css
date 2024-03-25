@@ -1,0 +1,59 @@
+.mainContainer{
+    padding: 36px 22px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.leftContainer{
+    padding: 0 24px;
+}
+
+
+.leftContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.groupImg{
+    object-fit: cover;
+}
+
+.groupInfoContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.igContainer{
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    border-right: solid 1px var(--color-primary);
+    gap: 6px;
+}
+
+.emailContainer{
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    gap: 6px;
+}
+
+.igContainer p, .emailContainer p{
+    font-size: var(--font-size-small);
+    color: var(--color-dark-gray);
+    font-weight: var(--font-weight-bold);
+}
+.rightContainer{
+    padding: 0 24px;
+    flex-grow: 2;
+}
+
+.mainTitle{
+    
+    font-size: var(--font-size-xlarge);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    border-bottom: solid 2px var(--color-primary);
+}

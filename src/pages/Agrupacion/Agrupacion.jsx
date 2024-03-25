@@ -1,5 +1,6 @@
 import GroupImage from "../../components/Group/GroupImage/GroupImage";
 import GroupMisionVision from "../../components/Group/GroupMisionVision/GroupMisionVision";
+import JoinGroup from "../../components/Group/JoinGroup/JoinGroup";
 const Agrupacion = () => {
   return (
     <>
@@ -20,6 +21,9 @@ const Agrupacion = () => {
         text="Año de Fundacion"
         color="orange"
       />
+
+      <JoinGroup groupEmail={"correodeejemplo@gmail.com"} groupIg={"@igejemplo"}/>
+
     </>
   );
 };

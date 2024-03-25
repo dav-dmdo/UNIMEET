@@ -5,11 +5,11 @@ const GroupMisionVision = ({ groupMision, groupVision }) => {
     <>
       <div className={styles.container}>
         <div className={styles.misionContainer}>
-          <h2>MISION</h2>
+         <img src="src/assets/MisionLogo.png" alt="Imagen que contiene un texto decorado que dice Mision" />
           <p>{groupMision}</p>
         </div>
         <div className={styles.visionContainer}>
-          <h2>VISION</h2>
+          <img src="src/assets/VisionLogo.png" alt="Imagen que contiene un texto decorado que dice Vision" />
           <p>{groupVision}</p>
         </div>
       </div>
@@ -18,3 +18,4 @@ const GroupMisionVision = ({ groupMision, groupVision }) => {
 };
 
 export default GroupMisionVision;
+
