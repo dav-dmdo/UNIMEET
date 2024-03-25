@@ -8,10 +8,10 @@ const JoinGroup = ({ groupIg, groupEmail }) => {
         <div className={styles.groupInfoContainer}>
           <div className={styles.igContainer}>
             <p>{groupIg}</p>
-            <img src="https://via.placeholder.com/50x50" alt="" />
+            <img src="src/assets/instagramIcon.png" alt="" />
           </div>
           <div className={styles.emailContainer}>
-            <img src="https://via.placeholder.com/50x50" alt="" />
+            <img src="src/assets/gmailIcon.png" alt="" />
             <p>{groupEmail}</p>
           </div>
         </div>
