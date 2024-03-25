@@ -12,6 +12,7 @@ import {Navbar} from "./componets/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
+import UserPage from './pages/UserPage/UserPage.jsx';
 import User from './pages/User/User.jsx';
 
 
@@ -27,7 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/Agrupaciones' element={<Agrupaciones />}/>
           <Route path='/ListadoAgrupaciones' element={<ListadoAgrupaciones />}/>
           <Route path='/agrupacion' element={<Agrupacion />}/>
-          <Route path='/User' element={<User />}/>
+          <Route path='/User' element={<UserPage />}/>
+          <Route path='/UserPage' element={<User />}/>
         </Route> 
       </Routes>
     </BrowserRouter>

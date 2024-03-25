@@ -1,5 +1,11 @@
-import styles from "./User.module.css";
+import styles from "./UserPage.module.css";
+import { Link, useNavigate } from "react-router-dom";
 export default function User() {
+    const navigate = useNavigate();
+    const changePage = async () => {
+ 
+        navigate("/UserPage");
+        };
   
     {/*TODO - Conect to functional buttons*/}
   return (
@@ -8,12 +14,12 @@ export default function User() {
         <div className={styles.leftside}>
         <img className={styles.image} src="./src/assets/userPage.png" alt="" />
         <div className={styles.textName}>
-            {/*//TODO - Put the name from the user*/}
+            {/*//TODO - Put the info from the user*/}
             <p>Nombre del Usuario</p>
             
         </div>
-        <button type="submit" className={styles.submitBtn}  >
-          Guardar cambios
+        <button type="submit" className={styles.submitBtn} onClick={changePage} >
+          Editar Perfil
         </button>
         </div>
        
@@ -22,69 +28,58 @@ export default function User() {
             <h1>Datos Personales</h1>
         </div>
         <div className={styles.text}>
-          {/*SECTION -  NAME*/}
-          <div className={styles.inputContainer}>
-            <label htmlFor="name">
-            <span>Nombre</span>
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Ex. Andrea Linares"
-          />
-          </div>
+        
 
             {/*SECTION -  EMAIL*/}
             <div className={styles.inputContainer}>
             <label htmlFor="email">
             <span>Correo electrónico*</span>
+            <div className={styles.information}>
+            <p className={styles.txt}>
+                    l.alb@correo.unimet.edu.ve
+                </p>
+            </div>
           </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ex. linares.andrea@correo.unimet.edu.ve"
-          />
+          
           </div>
 
           {/*SECTION -  TELEFONO*/}
           <div className={styles.inputContainer}>
           <label htmlFor="phoneNum">
             <span>Número de Teléfono</span>
+            <div className={styles.information}>
+            <p className={styles.txt}>
+                   04127869485
+                </p>
+                </div>
           </label>
-          <input
-            type="number"
-            name="phoneNum"
-            id="phoneNum"
-            placeholder="Ex. 04121122345"
-          />
+          
           </div>
 
           {/*SECTION -  CARRERA*/}
           <div className={styles.inputContainer}>
           <label htmlFor="carrera">
             <span>Carrera</span>
+            <div className={styles.information}>
+                <p className={styles.txt}>
+                    Ingenieria de sistemas
+                </p>
+            </div>
           </label>
-          <input
-            type="text"
-            name="carrera"
-            id="carrera"
-            placeholder="Ex. Ingeniería Eléctrica"
-          />
+          
           </div>
 
           {/*SECTION CARNET */}
           <div className={styles.inputContainer}>
           <label htmlFor="carnet">
             <span>Carnet</span>
+            <div className={styles.information}>
+            <p className={styles.txt}>
+                    202932323
+                </p>
+            </div>
           </label>
-          <input
-            type="number"
-            name="carnet"
-            id="carnet"
-            placeholder="Ex. 202221110405"
-          />
+          
           </div>
         </div>
         </div>
