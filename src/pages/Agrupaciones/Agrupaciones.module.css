@@ -1,0 +1,23 @@
+.middlebox {
+    background-color: #FF8006;
+    padding: 7%;
+    }
+  
+  .title{
+      margin: 0%;
+      margin-bottom: 2%;
+      color: rgb(255, 255, 255);
+      font-size: 80px;
+  }
+  
+  .description{
+      margin: 4px;
+      margin-bottom: 20px;
+      color: #FFF;
+      font-family: Roboto;
+      font-size: 31.381px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 7.845px; /* 25% */
+  }
+  
