@@ -15,10 +15,18 @@ export function ListadoAgrupaciones() {
 
   return (
       <main>  
-          <section className={styles.middlebox}>
-          <h1 className={styles.title}>Listado de Agrupaciones</h1>          
-          <GroupCard name={'Rescate Unimet'}></GroupCard>
-          </section>
+        <section className={styles.middlebox}>
+            <h1 className={styles.title}>Listado de Agrupaciones</h1>          
+            <div className={styles.groupCardContainer}>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+              <GroupCard name={'Rescate Unimet'}></GroupCard>
+            </div>
+        </section>
           
           
       </main>

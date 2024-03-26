@@ -5,7 +5,7 @@
   
   .title{
     margin: 0%;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     color: #FFF;
     font-family: Roboto;
     font-size: 64px;
@@ -23,5 +23,12 @@
       font-style: normal;
       font-weight: 900;
       line-height: 7.845px; /* 25% */
+  }
+
+  .groupCardContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por fila */
+    gap: 30px; /* Espacio entre las GroupCard */
+    width: 100%; /* Ajustar el ancho al 100% */
   }
   
