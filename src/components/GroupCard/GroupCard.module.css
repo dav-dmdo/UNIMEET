@@ -1,16 +1,18 @@
 .card {
     position: relative;
-    width: 90%; 
-    max-width: 1200px; 
+    width: 90%;
+    max-width: 1200px;
     min-width: 600px;
     height: 366px;
     flex-shrink: 0;
     border-radius: 50px;
     border: 0px solid rgba(0, 0, 0, 0.00);
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.60) 47.83%, rgba(255, 255, 255, 0.00) 100%), url(https://firebasestorage.googleapis.com/v0/b/unimeet-is.appspot.com/o/Rescate%20UNIMET.png?alt=media&token=d112afa1-5bb2-4145-8295-831d5ffb3d79) lightgray 0.815px -56.87px / 100% 119.92% no-repeat;
+    background-color: lightgray;
+    background-position: center;
+    background-size: cover;
     margin: 0;
     padding: 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   }
 
 .title{

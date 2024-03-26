@@ -6,7 +6,7 @@ import { GroupCard } from '../../components/GroupCard/GroupCard';
 
 export function ListadoAgrupaciones() {
   const groups=useGroups();
-  const categories=useCategories();
+  console.log(groups);
 
   // Verifica si clubs es null o undefined antes de acceder a sus propiedades
   if (!groups) {
@@ -14,22 +14,19 @@ export function ListadoAgrupaciones() {
   }
 
   return (
-      <main>  
-        <section className={styles.middlebox}>
-            <h1 className={styles.title}>Listado de Agrupaciones</h1>          
-            <div className={styles.groupCardContainer}>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-              <GroupCard name={'Rescate Unimet'}></GroupCard>
-            </div>
-        </section>
-          
-          
-      </main>
-    
-  )
+    <main>
+      <section className={styles.middlebox}>
+        <h1 className={styles.title}>Listado de Agrupaciones</h1>
+        <div className={styles.groupCardContainer}>
+          {Object.values(groups).map((group, index) => (
+            <GroupCard
+              key={index}
+              nombre={group.nombre}
+              img={group.img}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }
