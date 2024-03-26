@@ -23,6 +23,7 @@ const Agrupacion = () => {
       />
 
       <JoinGroup groupEmail={"correodeejemplo@gmail.com"} groupIg={"@igejemplo"}/>
+      
 
     </>
   );
