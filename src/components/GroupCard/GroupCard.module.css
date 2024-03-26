@@ -54,3 +54,35 @@
     background-color: #FFA726; 
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
 }
+
+@media (max-width: 1400px) {
+    .card {
+        min-width: 90%;
+        height: 250px;
+      }
+
+    .title{
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 950px) {
+    .card {
+        min-width: 70%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        height: 180px;
+        border-radius: 30px;
+    }
+
+    .button{
+        font-size: 12px;
+        padding: 9px 16px;;
+        border-radius: 13px;
+    }
+}

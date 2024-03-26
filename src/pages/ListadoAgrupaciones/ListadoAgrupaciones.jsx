@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from "./ListadoAgrupaciones.module.css";
 import useGroups from '../../controllers/Hooks/useGroups';
-import useCategories from '../../controllers/Hooks/useCategories';
 import { GroupCard } from '../../components/GroupCard/GroupCard';
 
 export function ListadoAgrupaciones() {
