@@ -8,8 +8,27 @@
     height: 192px;
     flex-shrink: 0;
     padding: auto;
+    margin-bottom: 4%;
 }
 
+.uploadButton{
+    color: #FF8006;
+text-align: center;
+font-size: 15px;
+font-style: bold;
+font-weight: 500;
+cursor: pointer;
+
+line-height:  120% ;
+border-radius: 9px;
+background: #FFF;
+width: 190px;
+height: 27px;
+margin-top: 10%;
+border:#6e6e70;
+padding: 5px;
+
+}
 .textName{
     
 color: #FFF;
