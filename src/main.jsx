@@ -11,11 +11,11 @@ import { Layout } from "./pages/Layout/Layout.jsx";
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx";
 import "./index.css";
 import User from "./pages/User/User.jsx";
-import { UserContext } from "./context/UserContext.jsx";
+import { UserProvider } from "./context/UserContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserContext>
+    <UserProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
@@ -33,6 +33,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
         </Routes>
       </BrowserRouter>
-    </UserContext>
+    </UserProvider>
   </React.StrictMode>
 );
