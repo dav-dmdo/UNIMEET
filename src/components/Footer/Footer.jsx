@@ -16,7 +16,7 @@ export  function Footer() {
       </div>
       <div>
           <p className={styles.direccion} >Dirección</p>
-          <p className={styles.descripcion} >Ditribuidor metropolitano Caracas, </p>
+          <p className={styles.descripcion} >Distribuidor metropolitano Caracas, </p>
           <p className={styles.descripcion} >1060, Miranda, Venezuela</p>
       </div>
 
