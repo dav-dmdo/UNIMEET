@@ -11,6 +11,7 @@ import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
 import User from './pages/User/User.jsx';
+import { Paypal } from './pages/Paypal/Paypal.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/ListadoAgrupaciones' element={<ListadoAgrupaciones />}/>
           <Route path='/agrupacion' element={<Agrupacion />}/>
           <Route path='/User' element={<User />}/>
+          <Route path='/Paypal' element={<Paypal />}/>
         </Route> 
       </Routes>
     </BrowserRouter>
