@@ -6,7 +6,7 @@ export const useUser = () => {
     const [user, setUser] = useState(null);
     const [userIsLoading, setUserIsLoading] = useState(true);
 
-    console.log("user state: " + user + " userIsLoading: " + userIsLoading);
+    
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             console.log(user !== null ? "User logged in " + user.email : "User logged out");
@@ -14,7 +14,6 @@ export const useUser = () => {
             setUserIsLoading(false);
         });
     }, [])
-    console.log("user state" + user + " userIsLoading: " + userIsLoading);
     return { user, userIsLoading};
 
 }
