@@ -1,7 +1,76 @@
+import GroupFeedbackMembers from "../../components/Group/GroupFeedbackMembers/GroupFeedbackMembers";
 import GroupImage from "../../components/Group/GroupImage/GroupImage";
 import GroupMisionVision from "../../components/Group/GroupMisionVision/GroupMisionVision";
 import JoinGroup from "../../components/Group/JoinGroup/JoinGroup";
 const Agrupacion = () => {
+  const messages = [
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+    {
+      sender: "Bob",
+      content: "¡Hola Alice! Estoy bien, ¿y tú?",
+      timestamp: "10:05 AM",
+    },
+    {
+      sender: "Alice",
+      content: "Yo también estoy bien, gracias.",
+      timestamp: "10:10 AM",
+    },
+  ];
   return (
     <>
       <GroupImage
@@ -10,6 +79,7 @@ const Agrupacion = () => {
         text="Nombre del grupo"
         color="black"
       />
+
       <GroupMisionVision
         groupMision="Misión del grupo     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatum at obcaecati beatae sit tenetur ducimus nam mollitia! A ullam neque asperiores assumenda debitis suscipit exercitationem consequatur totam ratione. Nisi!"
         groupVision="Visión del grupo     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatum at obcaecati beatae sit tenetur ducimus nam mollitia! A ullam neque asperiores assumenda debitis suscipit exercitationem consequatur totam ratione. Nisi!"
@@ -22,9 +92,12 @@ const Agrupacion = () => {
         color="orange"
       />
 
-      <JoinGroup groupEmail={"correodeejemplo@gmail.com"} groupIg={"@igejemplo"}/>
-      
+      <JoinGroup
+        groupEmail={"correodeejemplo@gmail.com"}
+        groupIg={"@igejemplo"}
+      />
 
+      <GroupFeedbackMembers messages={messages} />
     </>
   );
 };

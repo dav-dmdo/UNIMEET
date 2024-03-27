@@ -1,0 +1,22 @@
+.feedbackItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color:var(--color-white); /* Fondo naranja semi-transparente */
+  border-radius: 6px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sender {
+  font-weight: var(--font-weight-bolder);
+  color: var(--color-primary);
+}
+
+.content {
+  margin-top: 5px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
