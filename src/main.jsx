@@ -19,6 +19,7 @@ import AgregarCategoria from './pages/AgregarCategoria/AgregarCategoria.jsx';
 
 
 import { UserProvider } from "./context/UserContext.jsx";
+import { Paypal } from './pages/Paypal/Paypal.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -40,6 +41,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path='/UserPage' element={<UserPage />}/>
           <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
           <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
+          <Route path='/Paypal' element={<Paypal />}/>
           </Route>
         </Routes>
       </BrowserRouter>
