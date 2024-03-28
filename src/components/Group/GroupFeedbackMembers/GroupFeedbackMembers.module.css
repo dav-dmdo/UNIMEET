@@ -1,6 +1,6 @@
 .mainContainer {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   background-color: var(--color-white);
   padding: 36px 0;
 }
@@ -17,6 +17,7 @@
 .rightContainer {
     flex-grow: 1;
     display: flex;
+    flex-flow: column nowrap;
     background-color: var(--color-primary);
     padding: 0 22px;
 }

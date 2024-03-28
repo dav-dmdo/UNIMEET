@@ -71,6 +71,49 @@ const Agrupacion = () => {
       timestamp: "10:10 AM",
     },
   ];
+
+  const members = [
+    {
+      name: "Alice",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "Bob",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "Charlie",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "David",
+      img: "",
+    },
+    {
+      name: "Eve",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "Alice",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "Bob",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "Charlie",
+      img: "https://via.placeholder.com/150",
+    },
+    {
+      name: "David",
+      img: "",
+    },
+    {
+      name: "Eve",
+      img: "https://via.placeholder.com/150",
+    },
+  ];
   return (
     <>
       <GroupImage
@@ -97,7 +140,7 @@ const Agrupacion = () => {
         groupIg={"@igejemplo"}
       />
 
-      <GroupFeedbackMembers messages={messages} />
+      <GroupFeedbackMembers messages={messages} members={members}/>
     </>
   );
 };

@@ -1,0 +1,9 @@
+.feedbackList {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 8px;
+  border-radius: 10px; 
+  margin-bottom: 16px;
+  max-height: 300px; 
+  overflow-y: auto; 
+}

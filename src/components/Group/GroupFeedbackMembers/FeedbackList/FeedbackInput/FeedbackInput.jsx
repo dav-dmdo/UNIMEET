@@ -1,5 +1,5 @@
 
-import { useTextInput } from "../../../hooks/useTextInput";
+import { useTextInput } from "../../../../../hooks/useTextInput";
 import styles from "./FeedbackInput.module.css";
 
 const FeedbackInput = ({ onAddComment }) => {

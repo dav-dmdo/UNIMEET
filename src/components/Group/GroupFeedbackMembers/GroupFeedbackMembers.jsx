@@ -1,8 +1,9 @@
-import FeedbackList from "../FeedbackList/FeedbackList";
-import FeedbackInput from "../FeedbackInput/FeedbackInput";
+import FeedbackList from "./FeedbackList/FeedbackList";
+import FeedbackInput from "./FeedbackList/FeedbackInput/FeedbackInput";
 import styles from "./GroupFeedbackMembers.module.css";
+import MembersList from "./MembersList/MembersList";
 
-const GroupFeedbackMembers = ({messages}) => {
+const GroupFeedbackMembers = ({messages, members}) => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.leftContainer}>
@@ -12,7 +13,7 @@ const GroupFeedbackMembers = ({messages}) => {
       </div>
       <div className={styles.rightContainer}>
         <h1 className={styles.membersTitle}>Integrantes</h1>
-
+        <MembersList members={members} />
       </div>
     </div>
   );

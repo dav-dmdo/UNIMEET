@@ -1,4 +1,4 @@
-import FeedbackItem from '../FeedbackItem/FeedbackItem';
+import FeedbackItem from './FeedbackItem/FeedbackItem';
 import styles from './FeedbackList.module.css';
 
 const FeedbackList = ({ messages }) => {
