@@ -4,7 +4,7 @@ export default function User() {
     const navigate = useNavigate();
     const changePage = async () => {
  
-        navigate("/UserPage");
+        navigate("/User");
         };
   
     {/*TODO - Conect to functional buttons*/}

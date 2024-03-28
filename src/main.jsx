@@ -1,14 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import App from './App.jsx'
 import {Home} from "./pages/Home/Home.jsx"
 import {Categorias} from "./pages/Categorias/Categorias.jsx"
 import {Agrupaciones} from "./pages/Agrupaciones/Agrupaciones.jsx"
 import { ListadoAgrupaciones } from './pages/ListadoAgrupaciones/ListadoAgrupaciones.jsx';
 import {QuienesSomos} from "./pages/QuienesSomos/QuienesSomos.jsx"
 import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
-import {Navbar} from "./componets/Navbar/Navbar.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
@@ -39,7 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             />
             <Route path="/agrupacion" element={<Agrupacion />} />
             <Route path="/User" element={<User />} />
-            <Route path='/UserPage' element={<User />}/>
+            <Route path='/UserPage' element={<UserPage />}/>
           <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
           <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
           </Route>

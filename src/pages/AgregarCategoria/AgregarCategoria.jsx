@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { collection, doc, setDoc } from 'firebase/firestore';
+import { collection, doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../data/firebase';
 import styles from './AgregarCategoria.module.css';
 import { MultipleSelector } from '../../componets/Selector/MultipleSelector';
@@ -19,30 +19,47 @@ export default function AgregarCategoria() {
       agrupaciones: selectedOptions
     }));
   };
-  const onSubmit = async () => {
-    try {
-      const nombre = formData.nombre.trim(); // Remove leading and trailing whitespace
-      if (!nombre) {
-        console.error('Nombre de la Categoría is empty');
-        return;
-      }
-      const customId = nombre.toLowerCase().replace(/\s+/g, '-');
-      const data = {
-        nombre: formData.nombre,
-        agrupaciones: formData.agrupaciones,
-      };
-  
-      const categoriasCollectionRef = collection(db, 'categorias');
-      const documentRef = doc(categoriasCollectionRef, customId);
-  
-      await setDoc(documentRef, data);
-  
-      console.log('Data saved successfully with custom ID:', customId);
-      navigate('/Categorias')
-    } catch (error) {
-      console.error('Error saving data:', error);
+
+
+const onSubmit = async () => {
+  try {
+    const nombre = formData.nombre.trim(); // Remove leading and trailing whitespace
+    if (!nombre) {
+      console.error('Nombre de la Categoría is empty');
+      return;
     }
-  };
+    const customId = nombre.toLowerCase().replace(/\s+/g, '-');
+    const data = {
+      nombre: formData.nombre,
+      agrupaciones: formData.agrupaciones,
+    };
+
+    const categoriasCollectionRef = collection(db, 'categorias');
+    const documentRef = doc(categoriasCollectionRef, customId);
+
+    await setDoc(documentRef, data);
+
+    console.log('Data saved successfully with custom ID:', customId);
+
+    // Update documents in agrupaciones collection
+    for (const agrupacionId of formData.agrupaciones) {
+      const agrupacionDocRef = doc(collection(db, 'agrupaciones'), agrupacionId);
+      const agrupacionDocSnapshot = await getDoc(agrupacionDocRef);
+      if (agrupacionDocSnapshot.exists()) {
+        const agrupacionData = agrupacionDocSnapshot.data();
+        // Concatenate the new category name with the existing value
+        agrupacionData.categoria += `, ${nombre}`;
+        await updateDoc(agrupacionDocRef, agrupacionData);
+        console.log(`Document ${agrupacionId} updated successfully with categoria ${nombre}`);
+      }
+    }
+
+    navigate('/Categorias');
+  } catch (error) {
+    console.error('Error saving data:', error);
+  }
+};
+
   
 
   return (
@@ -64,8 +81,8 @@ export default function AgregarCategoria() {
             />
           </div>
           <div className={styles.selectContainer}>
-            <label htmlFor="chekcbox">
-              <span className={styles.text}>Escoge las agrupaciones</span>
+            <label htmlFor="chekcbox" className={styles.text}>
+              Escoge las agrupaciones
             </label>
             <MultipleSelector onSelect={handleSelect} />
           </div>
@@ -77,3 +94,4 @@ export default function AgregarCategoria() {
     </div>
   );
 }
+
