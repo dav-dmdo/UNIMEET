@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Selector = ({ label, options, changeValue }) => {
+
   return (
     <div className="">
       <label className="">{label}</label>
@@ -14,6 +15,7 @@ export const Selector = ({ label, options, changeValue }) => {
         {options && Array.isArray(options) && options.map((option, index) => (
           <option key={index} value={option.ID}>
             {option.nombre}
+            
           </option>
         ))}
       </select>
