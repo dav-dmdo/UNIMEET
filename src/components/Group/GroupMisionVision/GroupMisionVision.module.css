@@ -7,6 +7,9 @@
     width: 50%;
     padding: 24px;
 }
+.misionContainer img, .visionContainer img{
+    padding: 24px 0;
+}
 
 .misionContainer h2, .visionContainer h2{
     font-size: var(--font-size-large);

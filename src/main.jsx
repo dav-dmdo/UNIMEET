@@ -20,24 +20,31 @@ import AgregarCategoria from './pages/AgregarCategoria/AgregarCategoria.jsx';
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import { UserProvider } from "./context/UserContext.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/QuienesSomos' element={<QuienesSomos />}/>
-          <Route path='/Categorias' element={<Categorias />}/>
-          <Route path='/IniciarSesion' element={<IniciarSesion />}/>
-          <Route path='/Agrupaciones' element={<Agrupaciones />}/>
-          <Route path='/ListadoAgrupaciones' element={<ListadoAgrupaciones />}/>
-          <Route path='/agrupacion' element={<Agrupacion />}/>
-          <Route path='/User' element={<UserPage />}/>
-          <Route path='/UserPage' element={<User />}/>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/QuienesSomos" element={<QuienesSomos />} />
+            <Route path="/Categorias" element={<Categorias />} />
+            <Route path="/IniciarSesion" element={<IniciarSesion />} />
+            <Route path="/Agrupaciones" element={<Agrupaciones />} />
+            <Route
+              path="/ListadoAgrupaciones"
+              element={<ListadoAgrupaciones />}
+            />
+            <Route path="/agrupacion" element={<Agrupacion />} />
+            <Route path="/User" element={<User />} />
+            <Route path='/UserPage' element={<User />}/>
           <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
           <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
-        </Route> 
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
-)
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
+  </React.StrictMode>
+);
