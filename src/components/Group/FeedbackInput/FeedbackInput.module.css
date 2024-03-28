@@ -1,0 +1,29 @@
+/* CommentInput.module.css */
+
+.feedbackInput {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+  }
+  
+  .button {
+    padding: 8px 16px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: rgba(255, 128, 6, 0.8); /* Cambia el color al pasar el cursor */
+  }
+  

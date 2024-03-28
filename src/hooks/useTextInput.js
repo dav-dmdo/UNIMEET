@@ -10,5 +10,6 @@ export const useTextInput = (initialValue) => {
     return {
         value,
         onChange: handleChange,
+        setValue
     };
 }
