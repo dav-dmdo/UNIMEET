@@ -1,10 +1,20 @@
 import styles from "./User.module.css";
 import 'firebase/firestore';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../hooks/useUser";
 
 export default function User() {
+  const { user, userIsLoading } = useUser();
+  
+  useEffect(() => {
+    // If user data is not loading and user email is available, we can proceed with rendering
+    if (!userIsLoading && user.email) {
+      return;
+    }
+  }, [user, userIsLoading]);
+
 
   //TODO - put the useState original image with a link directly using the firebase image data
   const [imagePreview, setImagePreview] = useState('./src/assets/userPage.png');
@@ -42,7 +52,7 @@ export default function User() {
       </div>
         <div className={styles.textName}>
             {/*//TODO - Put the name from the user*/}
-            <p>Nombre del Usuario</p>
+         {/*   <p>{user.name}</p>*/}
             
         </div>
         <button type="submit" className={styles.submitBtn} onClick={onSubmit}  >

@@ -1,21 +1,37 @@
+import { useEffect } from "react";
+import { useUser } from "../../hooks/useUser";
 import styles from "./UserPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 export default function User() {
-    const navigate = useNavigate();
-    const changePage = async () => {
- 
-        navigate("/User");
-        };
-  
-    {/*TODO - Conect to functional buttons*/}
+  const { user, userIsLoading } = useUser();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // If user data is not loading and user email is available, we can proceed with rendering
+    if (!userIsLoading && user.email) {
+      return;
+    }
+  }, [user, userIsLoading]);
+
+  const changePage = async () => {
+    navigate("/User");
+  };
+
+  // If user data is still loading, show a loading indicator
+  if (userIsLoading) {
+    return <p>Loading...</p>;
+  }
+
+        
+        
+    {/*TODO - Remove the //*/}
   return (
 
     <div className={styles.userCard}>
         <div className={styles.leftside}>
         <img className={styles.image} src="./src/assets/userPage.png" alt="" />
         <div className={styles.textName}>
-            {/*//TODO - Put the info from the user*/}
-            <p>Nombre del Usuario</p>
+         {/*   <p>{user.name}</p>*/}
             
         </div>
         <button type="submit" className={styles.submitBtn} onClick={changePage} >
@@ -36,7 +52,7 @@ export default function User() {
             <span>Correo electrónico*</span>
             <div className={styles.information}>
             <p className={styles.txt}>
-                    l.alb@correo.unimet.edu.ve
+                    {user.email}
                 </p>
             </div>
           </label>
@@ -49,7 +65,7 @@ export default function User() {
             <span>Número de Teléfono</span>
             <div className={styles.information}>
             <p className={styles.txt}>
-                   04127869485
+                     {/*   <p>{user.numero}</p>*/}
                 </p>
                 </div>
           </label>
@@ -62,7 +78,7 @@ export default function User() {
             <span>Carrera</span>
             <div className={styles.information}>
                 <p className={styles.txt}>
-                    Ingenieria de sistemas
+                       {/*   <p>{user.carrera}</p>*/}
                 </p>
             </div>
           </label>
@@ -75,7 +91,7 @@ export default function User() {
             <span>Carnet</span>
             <div className={styles.information}>
             <p className={styles.txt}>
-                    202932323
+                      {/*   <p>{user.carnet}</p>*/}
                 </p>
             </div>
           </label>
