@@ -100,3 +100,28 @@
     align-items: center; /* Centra verticalmente el contenido */
     justify-content: center; /* Centra horizontalmente el contenido */
 }
+
+  
+  /* Estilo para el select */
+  .donationSelect {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(45deg, transparent 50%, #1d3c78 50%), linear-gradient(135deg, #1d3c78 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  /* Estilo para las opciones del select */
+  .donationSelect select option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
