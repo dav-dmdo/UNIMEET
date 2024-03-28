@@ -1,0 +1,37 @@
+.mainBox {
+    display: flex;
+    background-color: #FFF;
+    align-items: center;
+    align-content: center;
+    padding-top: 2%;
+    flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body {
+    background-color: #FFF;
+}
+
+.category {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2%;
+   
+  margin-bottom: 20px;
+}
+
+/* Apply different styles for smaller screens */
+@media (max-width: 768px) {
+    .category {
+      width: 45%;
+    }
+  }
+  
+  /* Apply different styles for even smaller screens */
+  @media (max-width: 480px) {
+    .category {
+      width: 100%;
+    }
+  }

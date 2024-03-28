@@ -1,0 +1,172 @@
+.box{
+    width: 996px;
+    height: 622px;
+    position: relative;
+    background-color: #FFF; 
+    background-image: url('src/assets/Ellipse10image.png'); 
+    background-size: auto; 
+    background-repeat: no-repeat; 
+    background-position: right; 
+    margin: 0 auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+.vectorImg {
+    margin: 1%;
+    transition: transform 0.3s; 
+}
+
+/* Efecto de hover */
+.vectorImg:hover {
+    transform: scale(1.1); 
+    cursor: pointer; 
+    opacity: 0.8;
+}
+
+
+
+.title{
+    margin: 0 auto;
+    color: #FF8006;
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 70px; 
+    text-align: center;
+    word-spacing: 17px; 
+}
+
+.title .colaboracion {
+    color: white; 
+}
+
+.mid {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.text{
+    width: 292px;
+    height: 242px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px; /* 150% */
+    margin-left: 42px;
+}
+
+.bottom{
+    margin: 0;
+}
+
+.square{
+    margin:0;
+    position: absolute; 
+    bottom: 0; 
+    right: 0;
+}
+
+.topSquare{
+    width: 297px;
+    height: 52px;
+    flex-shrink: 0;
+    background: #2790C3;
+    /*TEXT*/
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botSquare{
+    width: 297px;
+    height: 120px;
+    flex-shrink: 0;
+    background: #1F264F;
+    overflow: hidden;
+    /*TEXT*/
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+  /* Estilo para el select */
+  .donationSelect {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(45deg, transparent 50%, #1d3c78 50%), linear-gradient(135deg, #1d3c78 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  /* Estilo para las opciones del select */
+  .donationSelect select option {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+
+  @media (max-width: 1000px) {
+    .box{
+        max-width: 99%;
+        background-color: #ffffff;
+        background-image: none;
+    }
+    .title{
+        font-size: 40px ;
+        word-spacing:normal;
+    }
+
+    .title .colaboracion {
+        color: #FF8006; 
+    }
+
+    .mid{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2%;
+        margin-bottom: 0%;
+    }
+
+    .square{
+        display: none;
+    }
+
+    .text{
+        margin-bottom: 4%;
+        text-align: justify;
+        justify-content: center;
+        margin-inline: auto;
+    }
+
+  }

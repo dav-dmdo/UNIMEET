@@ -1,0 +1,67 @@
+.images{
+border-radius: 30px;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), lightgray -74.89px 0px / 149.927% 100% no-repeat;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+width: 300px;
+height: 300px;
+flex-shrink: 0;
+z-index: 2;
+
+}
+
+.title{
+width: 199px;
+height: 36px;
+flex-shrink: 0;
+color: #FFF;
+font-size: 21px;
+font-style: normal;
+font-weight: 900;
+line-height: 24px; /* 37.5% */
+margin-bottom: 2%;
+margin-top: -8%;
+z-index: 3;
+display: flex;
+        
+        align-items: center;
+        justify-content: center;
+}
+
+.text{
+color: #FFF;
+margin-top: 3%;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+align-items: center;
+line-height: 24px; /* 120% */
+}
+
+
+    .info {
+        border-radius: 30px;
+        background: #FF8006;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        width: 300px;
+        height: 200px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: -45px; /* Adjust the value as needed depending on the desired overlap */
+      }
+  
+
+.Layout{
+    margin: auto;
+    padding-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+    
+}
+
+
