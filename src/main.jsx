@@ -14,7 +14,10 @@ import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
 import UserPage from './pages/UserPage/UserPage.jsx';
 import User from './pages/User/User.jsx';
+import EliminarCategoria from './pages/EliminarCategoria/EliminarCategoria.jsx';
 import AgregarCategoria from './pages/AgregarCategoria/AgregarCategoria.jsx';
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,7 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/agrupacion' element={<Agrupacion />}/>
           <Route path='/User' element={<UserPage />}/>
           <Route path='/UserPage' element={<User />}/>
-          <Route path='/AgregarCategoria' element={<AgregarCategoria />}/>
+          <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
+          <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
         </Route> 
       </Routes>
     </BrowserRouter>
