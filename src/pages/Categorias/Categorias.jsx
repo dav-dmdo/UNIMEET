@@ -1,8 +1,10 @@
+
 import CategoryCard from '../../componets/CategoryCard/CategoryCard';
 import useCategories from '../../controllers/Hooks/useCategories';
 import styles from './Categorias.module.css';
 
 export  function Categorias() {
+  
   const categorias =useCategories();
 
 
@@ -10,6 +12,8 @@ export  function Categorias() {
     return <p>Cargando...</p>;
     
   }
+
+
   console.log(categorias[0].agrupaciones);
   return (
     <div className={styles.mainBox}>

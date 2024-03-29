@@ -3,7 +3,7 @@ import instagramIcon from "../../../assets/instagramIcon.png";
 import gmailIcon from "../../../assets/gmailIcon.png";
 import styles from "./JoinGroup.module.css";
 
-const JoinGroup = ({ groupIg, groupEmail }) => {
+const JoinGroup = ({ groupIg, groupEmail, groupImg }) => {
   const { value: comment, onChange: handleCommentChange } = useTextInput("");
 
   const handleSubmit = (e) => {
@@ -16,8 +16,8 @@ const JoinGroup = ({ groupIg, groupEmail }) => {
       <div className={styles.leftContainer}>
         <img
           className={styles.groupImg}
-          src="https://via.placeholder.com/300x300"
-          alt=""
+          src={groupImg}
+          alt="Imagen del Logo de la agrupación"
         />
         <div className={styles.groupInfoContainer}>
           <div className={styles.igContainer}>

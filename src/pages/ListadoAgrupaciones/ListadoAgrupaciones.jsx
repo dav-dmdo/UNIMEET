@@ -1,9 +1,13 @@
-import React from 'react'
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 import styles from "./ListadoAgrupaciones.module.css";
 import useGroups from '../../controllers/Hooks/useGroups';
 import { GroupCard } from '../../components/GroupCard/GroupCard';
 
 export function ListadoAgrupaciones() {
+  const { setGroupToShow } = useContext(UserContext);
+  const navigate = useNavigate();
   const groups=useGroups();
   console.log(groups);
 
@@ -11,6 +15,12 @@ export function ListadoAgrupaciones() {
   if (!groups) {
     return <p>Cargando...</p>;
   }
+
+  const handleClickOnGroup = (group) => {
+    setGroupToShow(group);
+    navigate("/agrupacion");
+    
+  };
 
   return (
     <main>
@@ -22,6 +32,7 @@ export function ListadoAgrupaciones() {
               key={index}
               nombre={group.nombre}
               img={group.img}
+              onClick={() => handleClickOnGroup(group)}
             />
           ))}
         </div>

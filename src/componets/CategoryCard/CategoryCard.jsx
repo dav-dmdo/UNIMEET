@@ -1,7 +1,17 @@
-import styles from './CategoryCard.module.css';
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
+import styles from "./CategoryCard.module.css";
 
 export default function CategoryCard(props) {
+  const { setGroupToShow } = useContext(UserContext);
+  const navigate = useNavigate();
   const { category, groups, image } = props;
+
+  const handleClickOnGroup = (group) => {
+    setGroupToShow(group);
+    navigate("/agrupacion");
+  };
   return (
     <div className={styles.Layout}>
       {/* TODO - SEE HOW CAN YOU MAKE THIS CHOOSE THE IMAGE BY THE CATEGORY */}
@@ -13,15 +23,16 @@ export default function CategoryCard(props) {
           <h1>{category}</h1>
         </div>
         <div className={styles.text}>
-          {Array.isArray(groups) ? (
-            groups.map((group, index) => (
-              <p key={index} style={{ marginBottom: '10px' }}>
-                {group}
-              </p>
-            ))
-          ) : (
-            groups
-          )}
+          {Array.isArray(groups)
+            ? groups.map((group, index) => (
+                <p 
+                key={index} 
+                onClick={() => handleClickOnGroup(group)}
+                style={{ marginBottom: "10px" }}>
+                  {group}
+                </p>
+              ))
+            : groups}
         </div>
       </div>
     </div>
