@@ -57,9 +57,9 @@ h2{
     font-size: 30px;
 }
 
-p{
+.answer{
     font-size: 18px;
-    color: #FF8006;
+    color: #FF8006 !important;
 }
 
 .faq{

@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.2.0",
-    "bootstrap": "^5.3.3",
     "firebase": "^10.9.0",
     "firebase-tools": "^13.5.1",
     "localforage": "^1.10.0",
@@ -21,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "sort-by": "^0.0.2",
-    "sweetalert2": "^11.6.13"
+    "sweetalert2": "^11.10.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
