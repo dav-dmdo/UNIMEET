@@ -30,11 +30,7 @@ export function Navbar(){
                         <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
                     </li>
-                    {/* <li id={styles.usuario}>
-                        <Link to="/UserPage">
-                        <img className={styles.image} src="./src/assets/User.png" alt="" />
-                        </Link>
-                    </li> */}
+                    
                     
                 </ul>
             </nav>
