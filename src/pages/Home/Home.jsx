@@ -1,25 +1,37 @@
 import React from 'react'
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import {useState } from "react";
 import useGroups from '../../controllers/Hooks/useGroups';
 import { GroupCard } from '../../components/GroupCard/GroupCard';
 import { Search } from '../../components/Search/Search';
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Home.module.css";
 
 
 export function Home() {
+  const { setGroupToShow } = useContext(UserContext);
   const [searchQuery, setSearchQuery] = useState('');
   const groups=useGroups();
+  const navigate = useNavigate();
 
+  const handleClickOnGroup = (group) => {
+    setGroupToShow(group);
+    navigate("/agrupacion");
+    
+  };
   
   
   if (!groups) {
     return <p>Cargando...</p>;
   }
 
-  const filteredGroups = groups.filter((group) =>
-      group.nombre.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+  const filteredGroups = groups.filter((group) => {
+    const nombreCoincide = group.nombre.toLowerCase().includes(searchQuery.toLowerCase());
+    const categoriaCoincide = group.categoria.toLowerCase().includes(searchQuery.toLowerCase());
+    return nombreCoincide || categoriaCoincide;
+  });
 
   return (
     
@@ -35,6 +47,7 @@ export function Home() {
             nombre={group.nombre}
             img={group.img}
             className={styles.cards}
+            onClick={() => handleClickOnGroup(group)}
           />
         ))}
       </div>
