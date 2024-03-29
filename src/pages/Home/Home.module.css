@@ -57,6 +57,12 @@ h2{
     font-size: 30px;
 }
 
+.noResults{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
 .answer{
     font-size: 18px;
     color: #FF8006 !important;

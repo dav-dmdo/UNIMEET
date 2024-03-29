@@ -26,16 +26,24 @@ export function Home() {
     <div>
       <h1 className={styles.title}>¡ÚNETE A TUS AGRUPACIONES FAVORITAS!</h1>
       <Search onChange={(e) => setSearchQuery(e.target.value)}></Search>
+      
+      {filteredGroups.length > 0 ? (
       <div className={styles.groupCardContainer}>
-          {Object.values(filteredGroups).map((group, index) => (            
-            <GroupCard
-              key={index}
-              nombre={group.nombre}
-              img={group.img}
-              className={styles.cards}
-            />
-          ))}
-        </div>
+        {Object.values(filteredGroups).map((group, index) => (
+          <GroupCard
+            key={index}
+            nombre={group.nombre}
+            img={group.img}
+            className={styles.cards}
+          />
+        ))}
+      </div>
+    ) : (
+      <div className={styles.noResults}>
+        <p>No hay resultados para tu búsqueda.</p>
+      </div>
+    )}
+
       <div className={styles.faq}>
         <h1 className={styles.principal}>Preguntas Frecuentes</h1>
         <div className={styles.preguntas}>
