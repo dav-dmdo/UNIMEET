@@ -22,7 +22,7 @@ export function Navbar(){
                     <Link className={styles.Link} to={"/Categorias"}><span>Categorías</span></Link>
                     </li>
                     <li>
-                    <Link className={styles.Link} to={'/Agrupaciones'} ><span>Mis Agrupaciones</span></Link>
+                    <Link className={styles.Link} to={'/ListadoAgrupaciones'} ><span>Agrupaciones</span></Link>
                     </li>
                     <li>
                     <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
@@ -30,6 +30,10 @@ export function Navbar(){
                         <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
                     </li>
+                    <li>
+                    <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
+                    </li>
+                    
                     
                     
                 </ul>

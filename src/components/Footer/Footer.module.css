@@ -11,16 +11,17 @@
     width: 570px;
 }
 .direccion {
-    color: #000;
+    color: #000 !important;
     font-family: Roboto;
     font-size: 22px;
     font-style: normal;
     font-weight: 900;
     line-height: 24px; /* 96% */
+    padding-top: 10%;
 }
 
 .descripcion {
-    color: #FF8006;
+    color: #FF8006 !important;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -29,7 +30,7 @@
 }
 
 .copyright{
-    color: #000;
+    color: #000 !important;
 text-align: center;
 font-family: Roboto;
 font-size: 14px;
