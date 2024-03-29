@@ -40,6 +40,13 @@ nav ul li{
     cursor: pointer;
     display: none;
 }
+.Link {
+    font-family: Roboto;
+    
+    text-decoration: none;
+    color: rgba(54, 72, 92, 1);
+    
+}
 
 #check{
     display: none;
