@@ -1,0 +1,98 @@
+.mainContainer{
+    padding: 36px 22px;
+    background-color: var(--color-white);
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.leftContainer{
+    padding: 0 24px;
+}
+
+
+.leftContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.groupImg{
+    object-fit: cover;
+}
+
+.groupInfoContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.igContainer{
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    border-right: solid 1px var(--color-primary);
+    gap: 6px;
+}
+
+.emailContainer{
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    gap: 6px;
+}
+
+.igContainer p, .emailContainer p{
+    font-size: var(--font-size-small);
+    color: var(--color-dark-gray);
+    font-weight: var(--font-weight-bold);
+}
+
+
+.rightContainer{
+    padding: 0 24px;
+    flex-grow: 2;
+}
+
+.mainTitle{
+    
+    font-size: var(--font-size-xlarge);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    border-bottom: solid 2px var(--color-primary);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+    align-items: center;
+    margin-top: 24px;
+}
+
+.commentTextArea{
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    border: solid 2px var(--color-primary);
+    border-radius: 5px;
+    resize: none;
+    background-color: rgba(255, 128, 6, 0.01);
+    color: var(--color-dark-gray);
+}
+
+.submitButton{
+    padding: 10px 20px;
+    font-size: var(--font-size-medium);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.submitButton:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,88 @@
+.card {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    min-width: 600px;
+    height: 366px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 0px solid rgba(0, 0, 0, 0.00);
+    background-color: lightgray;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+.title{
+    width: 293px;
+    position: absolute;
+    right: 34px;
+    top: 20px;
+    color: #FFF;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1; 
+    word-wrap: break-word; 
+}
+
+.button {
+    position: absolute; 
+    bottom: 20px; 
+    right: 34px; 
+    width: auto; 
+    margin: 10px;
+    padding: 10px 20px;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto, sans-serif; 
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #FF8006;
+    border: none; 
+    border-radius: 16px; 
+    cursor: pointer; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.button:hover {
+    background-color: #FFA726; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 1400px) {
+    .card {
+        min-width: 90%;
+        height: 250px;
+      }
+
+    .title{
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 950px) {
+    .card {
+        min-width: 70%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        height: 180px;
+        border-radius: 30px;
+    }
+
+    .button{
+        font-size: 12px;
+        padding: 9px 16px;;
+        border-radius: 13px;
+    }
+}

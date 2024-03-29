@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.misionContainer,
+.visionContainer {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  padding: 24px;
+  min-width: 356px;
+}
+.misionContainer img,
+.visionContainer img {
+  padding: 24px 0;
+}
+
+/* .misionContainer h2, .visionContainer h2{
+    font-size: var(--font-size-large);
+    letter-spacing: 6px;
+    font-weight: var(--font-weight-bold);
+} */
+
+.misionContainer p,
+.visionContainer p {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+}
+
+.misionContainer {
+  background-color: var(--color-white);
+}
+
+/* .misionContainer h2{
+    color: var(--color-primary);
+} */
+
+.misionContainer p {
+  color: var(--color-dark-gray);
+}
+
+.visionContainer {
+  background-color: var(--color-primary);
+}
+
+/* .visionContainer h2{
+    color: var(--color-white);
+} */
+
+.visionContainer p {
+  color: var(--color-dark-gray);
+}

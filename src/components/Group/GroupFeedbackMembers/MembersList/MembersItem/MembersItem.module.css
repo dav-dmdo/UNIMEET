@@ -1,0 +1,34 @@
+
+.container {
+    display: flex;
+    align-items: center; 
+    max-height: 64px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: var(--color-white);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .num {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    margin-right: 10px; 
+  }
+  
+  .img {
+    width: 48px; 
+    height: 48px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
+  }
+  
+  .name {
+    flex-grow: 1; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+  }
