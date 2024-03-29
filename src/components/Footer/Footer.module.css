@@ -61,3 +61,16 @@ line-height: 24px; /* 171.429% */
       line-height: 20px;
     }
   }
+
+@media (max-width:775px){
+  .direccion{
+    display: none;
+
+  }
+  .descripcion{
+    display: none;
+  }
+  .imgFooter{
+    width: 350px;
+  }
+}
