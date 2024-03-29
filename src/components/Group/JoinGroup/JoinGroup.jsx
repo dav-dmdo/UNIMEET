@@ -17,6 +17,7 @@ const JoinGroup = ({ groupIg, groupEmail, groupImg }) => {
         <img
           className={styles.groupImg}
           src={groupImg}
+          style={{borderRadius: '30px'}}
           alt="Imagen del Logo de la agrupación"
         />
         <div className={styles.groupInfoContainer}>

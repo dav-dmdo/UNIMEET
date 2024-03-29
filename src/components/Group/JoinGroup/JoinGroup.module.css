@@ -5,24 +5,25 @@
     flex-flow: row wrap;
 }
 
+
 .leftContainer{
     padding: 0 24px;
-}
-
-
-.leftContainer{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 
 .groupImg{
     object-fit: cover;
+    max-width: 300px;
 }
 
 .groupInfoContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .igContainer{
