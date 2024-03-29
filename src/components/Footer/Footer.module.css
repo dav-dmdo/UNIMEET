@@ -39,7 +39,7 @@ font-weight: 300;
 line-height: 24px; /* 171.429% */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .container {
       flex-wrap: wrap;
     }
@@ -62,3 +62,16 @@ line-height: 24px; /* 171.429% */
       line-height: 20px;
     }
   }
+
+@media (max-width:850px){
+  .direccion{
+    display: none;
+
+  }
+  .descripcion{
+    display: none;
+  }
+  .imgFooter{
+    width: 350px;
+  }
+}

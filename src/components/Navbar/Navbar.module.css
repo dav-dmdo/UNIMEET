@@ -1,4 +1,103 @@
-header {
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+
+.navbar{
+    height: 80px;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.enlace {
+    position: absolute;
+    padding: 20px 15px;
+}
+.logo{
+    
+}
+
+nav ul{
+    float: right;
+    margin-right:20px ;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 12px;
+}
+
+.checkbtn{
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+.Link {
+    font-family: Roboto;
+    
+    text-decoration: none;
+    color: rgba(54, 72, 92, 1);
+    
+}
+
+#check{
+    display: none;
+}
+.image {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    
+    
+}
+#perfil{
+    margin-top: 10px;
+}
+
+@media (max-width:770px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        left: 50%;
+        width: 65%;
+        height: 400px;
+        background-color: white;
+        top: 80px;
+        text-align: center;
+        transition: all .3s;
+        left: 100%;
+    }
+    .Link{
+        color: #FF8006;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    #check:checked ~ ul{
+        left: 35%;
+    }
+}
+header{
+    background-color: white;
+}
+
+
+
+
+/* header {
     background-color: white;
     margin-top: 1.5%;
     display: flex;
@@ -19,8 +118,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0; /* Remove margins */
-    padding: 0; /* Remove paddings */
+    margin: 0; 
+    padding: 0; 
 }
 
 .Link {
@@ -35,4 +134,4 @@ header {
     width: 30px;
     height: 30px;
     margin-left: 10px;
-}
+} */

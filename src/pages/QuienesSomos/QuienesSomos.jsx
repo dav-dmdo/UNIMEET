@@ -5,11 +5,11 @@ export  function QuienesSomos() {
     <div className={styles.contenedorPrincipal}>
       <div className={styles.container1}>
         <div className={styles.imgPrincipal}>
-          <img src="./src/assets/QuienesSomos.png" alt="Img Quienes Somos" />
+          <img src="./src/assets/QuienesSomos.png" className={styles.imgCircular} alt="Img Quienes Somos" />
         </div>
         <div className={styles.containerInfo}>
           <div className={styles.imgLogo}>
-            <img src="./src/assets/LogoQuienesSomos.png" alt="Img Logo" />
+            <img src="./src/assets/LogoQuienesSomos.png" className={styles.imgLogoQuienesSomos} alt="Img Logo" />
           </div>
           <div className={styles.info}>
               <p>
@@ -23,7 +23,7 @@ export  function QuienesSomos() {
         <div className={styles.linea1}></div>
         <div className={styles.tarjeta}>
           <div>
-            <img src="./src/assets/MisionLogo.png" alt="Img Mision" />
+            <img src="./src/assets/MisionLogo.png" className={styles.imgMision} alt="Img Mision" />
           </div>
           <div className={styles.infoTarjeta}>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati enim repellendus sit officiis iusto rerum dignissimos facere saepe debitis totam esse vel reiciendis numquam suscipit aspernatur id nulla, pariatur nesciunt!</p>
@@ -31,7 +31,7 @@ export  function QuienesSomos() {
         </div>
         <div className={styles.tarjeta}>
             <div>
-              <img src="./src/assets/VisionLogo.png" alt="Img Vision" />
+              <img src="./src/assets/VisionLogo.png" className={styles.imgVision} alt="Img Vision" />
             </div>
             <div className={styles.infoTarjeta}>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati enim repellendus sit officiis iusto rerum dignissimos facere saepe debitis totam esse vel reiciendis numquam suscipit aspernatur id nulla, pariatur nesciunt!</p>

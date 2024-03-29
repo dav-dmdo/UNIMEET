@@ -1,6 +1,7 @@
 .container1 {
    background-color: white;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     
     
@@ -21,6 +22,7 @@
 }
 
 .containerInfo {
+    
     height: 650px;
     margin-left: 15px;
     text-align: right;
@@ -61,7 +63,7 @@
     width: 433px;
     height: 325px;
     background-color: rgba(255, 128, 6, 1);
-    margin: 0px 7%;
+    margin: 0px 4%;
     
 
 }
@@ -70,4 +72,124 @@
     width: 259px;
     height: 125px;
     flex-shrink: 0;
+}
+
+@media only screen and (max-width:1200px) {
+    
+    .imgLogo{
+        width: 500px;
+        
+    }
+    .container1{
+        height: 505px;
+    }
+    .containerInfo{
+        width: 505px;
+        height: 505px;
+    }
+    .imgLogoQuienesSomos {
+        width: 450px;
+    }
+    .imgPrincipal{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+    .info{
+        padding-right: 25px;
+        margin-right: 12px;
+        height: 350px;
+        margin-left: 12px;
+        color: #000;
+        text-align: right;
+        font-family: Roboto;
+        font-size: 18px;
+    }
+    .imgCircular{
+        width: 360px;
+    }
+    .tarjeta{
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        align-items: center;
+        flex-direction: column;
+        width: 333px;
+        height: 225px;
+        background-color: rgba(255, 128, 6, 1);
+        margin: 0px 4%;
+    }
+    .infoTarjeta {
+        width: 259px;
+        height: 125px;
+        flex-shrink: 0;
+        font-size: small;
+    }
+    .linea1{
+    
+        width: 1px;
+        height: 220px;
+        background-color: rgba(255, 128, 6, 1);
+    }
+    .linea2{
+        
+        width: 1px;
+        height: 220px;
+        background-color: rgba(255, 128, 6, 1);
+    }
+    
+
+}
+@media (max-width:880px){
+    .container1 {
+        background-color: white;
+         display: flex;
+         flex-direction: column;
+         align-items: start;
+         height: auto;
+         
+     }
+     .imgLogo{
+        width: auto;
+     }
+     .info{
+        font-size: 12px;
+        height: auto;
+     }
+
+    .imgLogoQuienesSomos{
+        width: 250px;
+    }
+    
+    .containerInfo{
+        width: auto; 
+        display: flex;
+        flex-direction: column;
+         align-items: right;
+         justify-content: right;
+         height: auto;
+        
+    }
+     .container2 {
+        display: flex;
+        padding: 0px;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin: 0;
+        gap: 20px;
+     }
+     .imgCircular{
+        padding: 0;
+        margin: 0;
+     }
+     .linea1 {
+        width: 0px;
+        height: 0px;
+     }
+     .linea2 {
+        width: 0px;
+        height: 0px;
+     }
+    
 }
