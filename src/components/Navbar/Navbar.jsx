@@ -5,9 +5,9 @@ export function Navbar(){
 
     return(
         <header>
-            
+
             <nav className={styles.navbar}>
-                <input type="checkbox" id={styles.check} />
+               <input type="checkbox" id={styles.check} />
                 <label htmlFor={styles.check} className={styles.checkbtn}>
                     <img src="./src/assets/VectorNavBar.png" alt="" />
                 </label>
@@ -30,9 +30,6 @@ export function Navbar(){
                         <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
                     </li>
-                    
-                    
-                </ul>
             </nav>
         </header>
     );

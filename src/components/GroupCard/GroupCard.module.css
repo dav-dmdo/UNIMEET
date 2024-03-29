@@ -28,6 +28,7 @@
     font-weight: 700;
     line-height: 1; 
     word-wrap: break-word; 
+    margin-right: 300px;
 }
 
 .button {
@@ -84,5 +85,9 @@
         font-size: 12px;
         padding: 9px 16px;;
         border-radius: 13px;
+    }
+    .title{
+        font-size: 20px;
+        margin: auto;
     }
 }
