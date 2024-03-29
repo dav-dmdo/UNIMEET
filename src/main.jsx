@@ -32,10 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/Categorias" element={<Categorias />} />
             <Route path="/IniciarSesion" element={<IniciarSesion />} />
             <Route path="/Agrupaciones" element={<Agrupaciones />} />
-            <Route
-              path="/ListadoAgrupaciones"
-              element={<ListadoAgrupaciones />}
-            />
+            <Route path="/ListadoAgrupaciones" element={<ListadoAgrupaciones />} />
             <Route path="/agrupacion" element={<Agrupacion />} />
             <Route path="/User" element={<User />} />
             <Route path='/UserPage' element={<UserPage />}/>

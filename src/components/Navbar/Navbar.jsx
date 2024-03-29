@@ -6,7 +6,7 @@ export function Navbar(){
     return(
         <header>
             <div>
-                <img  src="./src/assets/logo.png" alt="Logo Unimmet" />
+                <a href='/'><img  src="./src/assets/logo.png" alt="Logo Unimmet" /></a>
             </div>
             <nav className={styles.navbar}>
                 <ul className={styles.navList}>
@@ -17,15 +17,19 @@ export function Navbar(){
                     <Link className={styles.Link} to={"/Categorias"}><span>Categorías</span></Link>
                     </li>
                     <li>
-                    <Link className={styles.Link} to={'/Agrupaciones'} ><span>Mis Agrupaciones</span></Link>
+                    <Link className={styles.Link} to={'/ListadoAgrupaciones'} ><span>Agrupaciones</span></Link>
                     </li>
                     <li>
-                    <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
+                    <Link className={styles.Link} to={'/Agrupaciones'} ><span>Mis Agrupaciones</span></Link>
                     </li>
+                    
                     <li id={styles.usuario}>
                         <Link to="/UserPage">
                         <img className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
+                    </li>
+                    <li>
+                    <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
                     </li>
                     
                 </ul>
