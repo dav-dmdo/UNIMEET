@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
     "@paypal/react-paypal-js": "^8.2.0",
+    "bootstrap": "^5.3.3",
     "firebase": "^10.9.0",
     "firebase-tools": "^13.5.1",
     "localforage": "^1.10.0",
