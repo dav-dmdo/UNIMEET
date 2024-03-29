@@ -39,7 +39,7 @@ font-weight: 300;
 line-height: 24px; /* 171.429% */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .container {
       flex-wrap: wrap;
     }
@@ -63,7 +63,7 @@ line-height: 24px; /* 171.429% */
     }
   }
 
-@media (max-width:775px){
+@media (max-width:850px){
   .direccion{
     display: none;
 
