@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerWithEmailAndPassword, singInWithGoogle } from '../../data/services/auth';
 
 export function RegistrarUsuario() {
-  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     
     email: '',
@@ -14,7 +13,6 @@ export function RegistrarUsuario() {
 
   const handleSingWithGoogle = async () => {
     await singInWithGoogle()
-    navigate('/')
   }
   const handleOnChange = async (event) => {
     const { name, value} = event.target;
