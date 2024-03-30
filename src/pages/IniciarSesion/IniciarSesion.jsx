@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styles from "./IniciarSesion.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import { loginWithEmailAndPassword , singInWithGoogle} from "../../data/services/auth";
-import {createUserProfile} from "../../data/services/users"
 
 export  function IniciarSesion() {
 
@@ -15,15 +14,8 @@ export  function IniciarSesion() {
   const onSubmit = async (event) => {
     event.preventDefault();
     const {email, password}= formData;
-    if(email.includes("unimet.edu.ve")==true){
-      
-      navigate("/")
-      await loginWithEmailAndPassword(email,password)
-    }else{
-      alert("Debe tener un correo de estudiante de la Universidad")
-    }
-    
-    
+    navigate("/")
+    await loginWithEmailAndPassword(email,password)
     
   };
 
@@ -75,7 +67,11 @@ const handleSingWithGoogle = async () => {
          </div>
 
          <div className={styles.loginAltern}>
-          <button ><img src="./src/assets/google.png" alt="" /></button>
+          <button 
+            type="button"
+            onClick={handleSingWithGoogle}
+          ><img src="./src/assets/google.png" alt="" /></button>
+          
          </div>
 
         <button type="submit" className={styles.submitBtn}>

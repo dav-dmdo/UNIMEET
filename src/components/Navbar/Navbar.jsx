@@ -2,8 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import  styles from "./Navbar.module.css"
 
 import { logout } from "../../data/services/auth";
-import { UserContext } from "../../context/UserContext";
-import { useContext } from "react";
+import { useUsuario } from "../../context/UsuarioContext";
 
 export function Navbar(){
         // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
@@ -13,6 +12,11 @@ export function Navbar(){
     const {user, isLoading }= useContext(UserContext)
     console.log(user)
 
+    const handleLogout = async () => {
+        await logout();
+    }
+
+    const {user}= useUsuario();
     const handleLogout = async () => {
         await logout();
     }
@@ -45,7 +49,7 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> {user.displayName} </span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span> {user.name} </span></Link>
                             </li>
                             <li>
                             <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>
