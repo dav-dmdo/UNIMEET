@@ -34,7 +34,7 @@ export  function QuienesSomos() {
               <img src="./src/assets/VisionLogo.png" className={styles.imgVision} alt="Img Vision" />
             </div>
             <div className={styles.infoTarjeta}>
-              <p className={styles.texto}>Convertirse en un medio completo para descubrir, explorar y unirse a las diversas agrupaciones estudiantiles de la Universidad Metropolitana, para poder así impulsar una cultura de participación activa y compromiso estudiantil, donde cada estudiante pueda encontrar una agrupación que se ajuste a sus intereses, pasiones y objetivos, contribuyendo así a su desarrollo integral y a la construcción de una verdadera comunidad universitaria.</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati enim repellendus sit officiis iusto rerum dignissimos facere saepe debitis totam esse vel reiciendis numquam suscipit aspernatur id nulla, pariatur nesciunt!</p>
             </div>
         </div>
         <div className={styles.linea2}></div>

@@ -34,12 +34,6 @@
     margin-bottom: 15px;
   }
   
-  label {
-    display: block; 
-    margin-bottom: 5px;
-    font-weight: light;
-    
-  }
   
   input[type="string"] {
     width: 100%; 

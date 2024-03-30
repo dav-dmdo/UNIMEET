@@ -27,7 +27,7 @@ export default function EliminarAgrupacion(){
             <Selector
                 className={styles.seleccionar}
                 placeholder='Seleccionar'
-                label="Seleccionar Agrupación a Eliminar"
+                label="Seleccionar Agrupación a Eliminar: "
                 options={groups}
                 changeValue={(event) => {
                   handleOnChange({
