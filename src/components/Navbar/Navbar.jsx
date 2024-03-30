@@ -2,11 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import  styles from "./Navbar.module.css"
 
 import { logout } from "../../data/services/auth";
-import { useUsuario } from "../../context/UsuarioContext";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 export function Navbar(){
+        // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
+        // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 
+        // si el usuario esta logeado o no
+        
+    const {user, isLoading }= useContext(UserContext);
 
-    const {user}= useUsuario();
     const handleLogout = async () => {
         await logout();
     }
