@@ -67,7 +67,10 @@ const handleSingWithGoogle = async () => {
          </div>
 
          <div className={styles.loginAltern}>
-          <button ><img src="./src/assets/google.png" alt="" /></button>
+          <button 
+            type="button"
+            onClick={handleSingWithGoogle}
+          ><img src="./src/assets/google.png" alt="" /></button>
           
          </div>
 

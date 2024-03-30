@@ -4,12 +4,6 @@ import  styles from "./Navbar.module.css"
 import { logout } from "../../data/services/auth";
 import { useUsuario } from "../../context/UsuarioContext";
 
-//Resolviendo los imports de las imagenes
-import VectorNavBar from "../../assets/VectorNavBar.png"; // Importa la imagen VectorNavBar
-import logo from "../../assets/logo.png"; // Importa la imagen logo
-import UserIcon from "../../assets/User.png"; // Importa la imagen UserIcon
-
-
 export function Navbar(){
         // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
         // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 
@@ -60,7 +54,7 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> -{user.displayName }-</span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span> {user.name} </span></Link>
                             </li>
                             <li>
                             <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>
@@ -71,7 +65,7 @@ export function Navbar(){
                         <>
                         <li>
                         <Link to="/UserPage" >
-                        <img id={styles.perfil} className={styles.image} src={UserIcon} alt="" />
+                        <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
                     <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
 
