@@ -38,6 +38,8 @@
   font-size: min(6vw, 32px); /* Tamaño de fuente relativo con tamaño mínimo de 32px */
   max-width: 80%;
   font-weight: var(--font-weight-bold);
-  
+  font-size: 60px;
 }
+
+
 

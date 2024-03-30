@@ -34,17 +34,17 @@ export  function IniciarSesion() {
          </div>
 
          <div className={styles.loginAltern}>
-          <button><img src="./src/assets/google.png" alt="" /></button>
-           <button><img src="./src/assets/facebook.png" alt="" /></button>
+          <button ><img src="./src/assets/google.png" alt="" /></button>
+          
          </div>
 
         <button type="submit" className={styles.submitBtn}>
           Iniciar Sesión
         </button>
 
-        <Link className={styles.loginRedirect}>
+        <Link className={styles.loginRedirect} to={'/RegistrarUsuario'}>
           ¿No tienes una cuenta?{" "}
-          <span className={styles.redirectLink}>Regístrate</span>
+          <a className={styles.redirectLink} href='/RegistrarUsuario' >Regístrate</a>
         </Link>
       </form>
       </div>

@@ -22,7 +22,7 @@
   
 }
   
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     .title {
       font-size: 1.5rem; 
   }}
@@ -74,7 +74,7 @@ h2{
     flex-shrink: 1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
     .block1, .block2 {
         flex-wrap: wrap;
     }

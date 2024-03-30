@@ -7,6 +7,7 @@ import {Agrupaciones} from "./pages/Agrupaciones/Agrupaciones.jsx"
 import { ListadoAgrupaciones } from './pages/ListadoAgrupaciones/ListadoAgrupaciones.jsx';
 import {QuienesSomos} from "./pages/QuienesSomos/QuienesSomos.jsx"
 import {IniciarSesion} from "./pages/IniciarSesion/IniciarSesion.jsx"
+import {RegistrarUsuario} from "./pages/RegistrarUsuario/RegistrarUsuario.jsx"
 import {Layout} from "./pages/Layout/Layout.jsx"
 import Agrupacion from "./pages/Agrupacion/Agrupacion.jsx"
 import './index.css'
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/QuienesSomos" element={<QuienesSomos />} />
             <Route path="/Categorias" element={<Categorias />} />
             <Route path="/IniciarSesion" element={<IniciarSesion />} />
+            <Route path="/RegistrarUsuario" element={<RegistrarUsuario />} />
             <Route path="/Agrupaciones" element={<Agrupaciones />} />
             <Route path="/ListadoAgrupaciones" element={<ListadoAgrupaciones />} />
             <Route path="/agrupacion" element={<Agrupacion />} />
