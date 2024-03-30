@@ -2,11 +2,11 @@ import {db} from "../firebase/index"
 import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore"
 
 export async function createUserProfile(userId, data){
-    return setDoc(doc(db, "usuarios",userId), data);
+    return setDoc(doc(db, "users",userId), data);
 } 
 
 export async function getUserProfile(email){
-    const userQuery = query(collection(db, "usuarios"), where("email","==",email));
+    const userQuery = query(collection(db, "users"), where("email","==",email));
 
     const result = await getDocs(userQuery);
 
