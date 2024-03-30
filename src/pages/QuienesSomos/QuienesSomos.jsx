@@ -26,7 +26,7 @@ export  function QuienesSomos() {
             <img src="./src/assets/MisionLogo.png" className={styles.imgMision} alt="Img Mision" />
           </div>
           <div className={styles.infoTarjeta}>
-            <p className={styles.texto}>Nuestra misión es brindar a los estudiantes una página web atractiva, interactiva y fácil de usar, que proporcione una plataforma centralizada para la exposición de las agrupaciones estudiantiles de la Universidad Metropolitana.</p>
+            <p className={styles.texto}>Fomentar la participación estudiantil, facilitando la conexión entre los alumnos y las agrupaciones, la página web funcionará como intermediario, brindando información detallada sobre cada una de ellas, y además, permitiendo afiliación online. La página web promoverá la diversidad, la colaboración y el crecimiento personal, enriqueciendo la vida estudiantil y fortaleciendo la comunidad universitaria</p>
           </div>
         </div>
         <div className={styles.tarjeta}>
@@ -34,7 +34,7 @@ export  function QuienesSomos() {
               <img src="./src/assets/VisionLogo.png" className={styles.imgVision} alt="Img Vision" />
             </div>
             <div className={styles.infoTarjeta}>
-              <p className={styles.texto}>Nuestra visión es convertir a UNIMEET en un medio completo para descubrir, explorar y unirse a las diversas agrupaciones estudiantiles de la Universidad Metropolitana, para poder así impulsar una cultura de participación activa y promover el compromiso estudiantil.</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati enim repellendus sit officiis iusto rerum dignissimos facere saepe debitis totam esse vel reiciendis numquam suscipit aspernatur id nulla, pariatur nesciunt!</p>
             </div>
         </div>
         <div className={styles.linea2}></div>
