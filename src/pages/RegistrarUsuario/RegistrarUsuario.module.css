@@ -4,7 +4,10 @@
     justify-content: center;
     padding: 5%;
     flex-wrap: wrap;
+    
 }
+
+
 
 
 .container {
@@ -70,7 +73,7 @@
     cursor: pointer;
   }
   
- 
+  
  
   
   .container .form .loginRedirect {
@@ -99,6 +102,8 @@
     color: #181b20;
     text-decoration: underline;
   }
-
-
   
+.enter{
+    margin-top: 20px;
+}
+

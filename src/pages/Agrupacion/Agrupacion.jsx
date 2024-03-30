@@ -13,8 +13,8 @@ const Agrupacion = () => {
     vision,
     instagram,
     img: imageName,
-    img: imageYear,
-    img: imageLogo,
+    imgYear: imageYear,
+    imgForm: imageLogo,
     email,
   } = groupToShow;
   const groupMision =

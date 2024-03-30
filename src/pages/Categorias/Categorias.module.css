@@ -35,3 +35,15 @@ body {
       width: 100%;
     }
   }
+
+.adminBox{
+  display: flex;
+  background-color: #FFF;
+  
+}
+
+.button{
+  margin: auto;
+  margin-bottom: 5%;
+  
+}

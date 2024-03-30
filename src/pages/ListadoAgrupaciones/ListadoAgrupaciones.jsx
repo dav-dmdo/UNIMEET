@@ -17,6 +17,7 @@ export function ListadoAgrupaciones() {
   }
 
   const handleClickOnGroup = (group) => {
+    console.log(group);
     setGroupToShow(group);
     navigate("/agrupacion");
     

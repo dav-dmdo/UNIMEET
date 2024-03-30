@@ -53,14 +53,14 @@ nav ul li{
     width: 30px;
     height: 30px;
     margin-left: 10px;
-    
-    
+    margin-right: 10px;
 }
+
 #perfil{
     margin-top: 10px;
 }
 
-@media (max-width:770px){
+@media (max-width:900px){
     .checkbtn{
         display: block;
     }
@@ -68,12 +68,13 @@ nav ul li{
         position: fixed;
         left: 50%;
         width: 65%;
-        height: 400px;
+        height: 450px;
         background-color: white;
         top: 80px;
         text-align: center;
         transition: all .3s;
         left: 100%;
+        z-index: 10;
     }
     .Link{
         color: #FF8006;

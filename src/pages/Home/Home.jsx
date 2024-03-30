@@ -1,41 +1,62 @@
 import React from 'react'
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import {useState } from "react";
 import useGroups from '../../controllers/Hooks/useGroups';
 import { GroupCard } from '../../components/GroupCard/GroupCard';
 import { Search } from '../../components/Search/Search';
+import { useNavigate } from "react-router-dom";
 
 import styles from "./Home.module.css";
 
 
 export function Home() {
+  const { setGroupToShow } = useContext(UserContext);
   const [searchQuery, setSearchQuery] = useState('');
   const groups=useGroups();
+  const navigate = useNavigate();
 
+  const handleClickOnGroup = (group) => {
+    setGroupToShow(group);
+    navigate("/agrupacion");
+    
+  };
   
   
   if (!groups) {
     return <p>Cargando...</p>;
   }
 
-  const filteredGroups = groups.filter((group) =>
-      group.nombre.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+  const filteredGroups = groups.filter((group) => {
+    const nombreCoincide = group.nombre.toLowerCase().includes(searchQuery.toLowerCase());
+    const categoriaCoincide = group.categoria.toLowerCase().includes(searchQuery.toLowerCase());
+    return nombreCoincide || categoriaCoincide;
+  });
 
   return (
     
     <div>
       <h1 className={styles.title}>¡ÚNETE A TUS AGRUPACIONES FAVORITAS!</h1>
       <Search onChange={(e) => setSearchQuery(e.target.value)}></Search>
+      
+      {filteredGroups.length > 0 ? (
       <div className={styles.groupCardContainer}>
-          {Object.values(filteredGroups).map((group, index) => (            
-            <GroupCard
-              key={index}
-              nombre={group.nombre}
-              img={group.img}
-              className={styles.cards}
-            />
-          ))}
-        </div>
+        {Object.values(filteredGroups).map((group, index) => (
+          <GroupCard
+            key={index}
+            nombre={group.nombre}
+            img={group.img}
+            className={styles.cards}
+            onClick={() => handleClickOnGroup(group)}
+          />
+        ))}
+      </div>
+    ) : (
+      <div className={styles.noResults}>
+        <p>No hay resultados para tu búsqueda.</p>
+      </div>
+    )}
+
       <div className={styles.faq}>
         <h1 className={styles.principal}>Preguntas Frecuentes</h1>
         <div className={styles.preguntas}>

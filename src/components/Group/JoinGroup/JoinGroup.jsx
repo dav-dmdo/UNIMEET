@@ -17,6 +17,7 @@ const JoinGroup = ({ groupIg, groupEmail, groupImg }) => {
         <img
           className={styles.groupImg}
           src={groupImg}
+          style={{borderRadius: '30px'}}
           alt="Imagen del Logo de la agrupación"
         />
         <div className={styles.groupInfoContainer}>
@@ -36,7 +37,7 @@ const JoinGroup = ({ groupIg, groupEmail, groupImg }) => {
           <textarea
           className={styles.commentTextArea}
             type="text"
-            placeholder="¿por qué estás interesado en unirte a esta agrupacion?"
+            placeholder="¿Por qué estás interesado en unirte a esta agrupacion?"
             value={comment}
             onChange={handleCommentChange}
           />

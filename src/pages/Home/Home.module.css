@@ -22,7 +22,7 @@
   
 }
   
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     .title {
       font-size: 1.5rem; 
   }}
@@ -57,6 +57,12 @@ h2{
     font-size: 30px;
 }
 
+.noResults{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
 .answer{
     font-size: 18px;
     color: #FF8006 !important;
@@ -68,7 +74,7 @@ h2{
     flex-shrink: 1;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
     .block1, .block2 {
         flex-wrap: wrap;
     }

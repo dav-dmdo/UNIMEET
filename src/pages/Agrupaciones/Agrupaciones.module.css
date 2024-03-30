@@ -21,3 +21,101 @@
       line-height: 7.845px; /* 25% */
   }
   
+.groupCardContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por fila */
+    gap: 30px; /* Espacio entre las GroupCard */
+    padding: 3%;
+    width: 100%; /* Ajustar el ancho al 100% */
+}
+
+.moreGroups{
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    min-width: 600px;
+    height: 366px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 0px solid rgba(0, 0, 0, 0.00);
+    background-color: rgb(255, 255, 255);
+    background-image: url(src/assets/ph_plus-bold.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex; 
+    align-items: flex-end;
+    justify-content: center;
+    transition: transform 0.7s ease, opacity 0.7s ease, box-shadow 0.7s ease; /* Ajustar la duración de la transición */
+}
+
+.moreGroups:hover {
+    transform: scale(1.05);
+    opacity: 0.92;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.text{
+    color: #FF8006;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4px;
+    align-self: flex-end;
+    margin-bottom: 4%;
+    }
+
+
+@media (max-width: 1400px) {
+    
+    .middlebox {
+        padding: 5%;
+        padding-right: 2%;
+      }
+
+       .title {
+      font-size: 50px;
+    }
+
+    .description{
+        font-size: 24px;
+    }
+  
+    
+    .moreGroups {
+        min-width: 90%;
+        height: 250px;
+      }
+    }
+
+@media (max-width: 950px) {
+
+    .groupCardContainer {
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+      }
+    
+    .moreGroups {
+            min-width: 70%;
+            max-width: 500px;
+        }
+    }
+    
+@media (max-width: 600px) {
+        .moreGroups {
+            height: 180px;
+            border-radius: 30px;
+            background-size: 30%;
+        }
+
+        .text{
+            font-size: 16px;
+        }
+
+    }

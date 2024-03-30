@@ -16,9 +16,9 @@
   }
 
 .title{
-    width: 293px;
+    width: 500px;
     position: absolute;
-    right: 34px;
+    right: 44px;
     top: 20px;
     color: #FFF;
     text-align: right;
@@ -28,7 +28,6 @@
     font-weight: 700;
     line-height: 1; 
     word-wrap: break-word; 
-    margin-right: 300px;
 }
 
 .button {
