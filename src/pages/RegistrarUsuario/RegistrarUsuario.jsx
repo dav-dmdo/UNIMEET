@@ -1,16 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./RegistrarUsuario.module.css"
 import { Link, useNavigate } from "react-router-dom";
-
+import { registerWithEmailAndPassword, singInWithGoogle } from '../../data/services/auth';
 
 export function RegistrarUsuario() {
+  const [formData, setFormData] = useState({
+    
+    email: '',
+    name: '',
+    agrupaciones: []
+  });
+
+  const handleSingWithGoogle = async () => {
+    await singInWithGoogle()
+  }
+  const handleOnChange = async (event) => {
+    const { name, value} = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const {email, password, ...extraData} = formData;
+    await registerWithEmailAndPassword(formData.email, formData.password, extraData)
+    navigate('/')
+  };
     return(
     
         <div className={styles.containerGlob}>
         <img src="./src/assets/SignUp.png" alt="" />
 
           <div className={styles.container}>
-            <form className={styles.form} >
+            <form className={styles.form} onSubmit={onSubmit}>
               <h1 className={styles.title}>¡Únete a Unimeet!</h1>
               
     
@@ -21,6 +45,7 @@ export function RegistrarUsuario() {
                 id="nombre"
                 placeholder="Nombre"
                 className={styles.enter}
+                onChange={handleOnChange}
               />
               <input
                 type="email"
@@ -28,6 +53,7 @@ export function RegistrarUsuario() {
                 id="email"
                 placeholder="Correo electrónico"
                 className={styles.enter}
+                onChange={handleOnChange}
               />
     
                 <input
@@ -36,6 +62,7 @@ export function RegistrarUsuario() {
                 id="password"
                 placeholder="Contraseña"
                 className={styles.enter}
+                onChange={handleOnChange}
               />
              </div>
              <div className={styles.linedivision}>
@@ -43,11 +70,11 @@ export function RegistrarUsuario() {
              </div>
     
              <div className={styles.loginAltern}>
-              <button><img src="./src/assets/google.png" alt="" /></button>
+              <button type="button" onClick={handleSingWithGoogle}><img src="./src/assets/google.png" alt="" /></button>
               
              </div>
     
-            <button type="submit" className={styles.submitBtn}>
+            <button type="submit"  className={styles.submitBtn}>
               Registrar Usuario
             </button>
     
