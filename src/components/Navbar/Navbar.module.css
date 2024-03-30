@@ -60,7 +60,7 @@ nav ul li{
     margin-top: 10px;
 }
 
-@media (max-width:770px){
+@media (max-width:900px){
     .checkbtn{
         display: block;
     }
