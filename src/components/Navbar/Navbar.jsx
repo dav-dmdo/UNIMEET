@@ -4,7 +4,6 @@ import  styles from "./Navbar.module.css"
 import { logout } from "../../data/services/auth";
 import { useUsuario } from "../../context/UsuarioContext";
 
-
 export function Navbar(){
         // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
         // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 

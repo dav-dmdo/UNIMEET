@@ -1,5 +1,5 @@
 import {db} from "../firebase/index"
-import { collection, doc, getDoc, getDocs, query, setDoc, where, updateDoc } from "firebase/firestore"
+import { collection, doc, getDoc, getDocs, query, setDoc, where } from "firebase/firestore"
 
 export async function createUserProfile(userId, data){
     return setDoc(doc(db, "usuarios",userId), data);
@@ -19,20 +19,4 @@ export async function getUserProfile(email){
     } else {
         return null;
     }
-}
-
-
-export async function updateUserGroup (uid, agrupaciones){
-    const documentoRef = doc(collection(db, 'users'), uid);
-    const documento = await getDoc(documentoRef);
-    console.log(agrupaciones)
-    if (!documento.exists) {
-      throw new Error('El documento no existe.');
-    }
-
-    else{
-        const data = { agrupaciones };
-        await updateDoc(documentoRef, data);
-    }
-
 }
