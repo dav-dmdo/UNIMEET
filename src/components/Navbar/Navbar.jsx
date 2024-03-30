@@ -21,11 +21,6 @@ export function Navbar(){
         await logout();
     }
 
-    const {user}= useUsuario();
-    const handleLogout = async () => {
-        await logout();
-    }
-
     return(
         <header>
             
