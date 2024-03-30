@@ -27,25 +27,25 @@ export default function AgregarAgrupacion(){
         <div className={styles.containerGlobal}>
             <div className={styles.containerLeft}>
             <div className={styles.form}>
-                <label htmlFor='nombre'>Nombre de la Agrupacion</label>
+                <label htmlFor='nombre' className={styles.labels}>Nombre de la Agrupacion </label>
                 <input type='string' id='nombre'></input>
             </div>
             <div className={styles.form}>
-                <label htmlFor='mision'>Mision</label>
+                <label htmlFor='mision' className={styles.labels}>Mision</label>
                 <input type='string' id='mision'></input>
             </div>
             <div className={styles.form}>
-                <label htmlFor='vision'>Vision</label>
+                <label htmlFor='vision' className={styles.labels}>Vision</label>
                 <input type='string' id='vision'></input>
             </div>
             </div>
             <div className={styles.containerRight}>
             <div className={styles.form}>
-                <label htmlFor='instagram'>Instagram</label>
+                <label htmlFor='instagram' className={styles.labels}>Instagram</label>
                 <input type='string' id='instagram'></input>
             </div>
             <div className={styles.form}>
-                <label htmlFor='email'>Email</label>
+                <label htmlFor='email' className={styles.labels}>Email</label>
                 <input type='string' id='email'></input>
             </div>
             <div className={styles.form}>
