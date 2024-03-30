@@ -11,7 +11,7 @@ export function NavbarAdmin(){
                 <label htmlFor={styles.check} className={styles.checkbtn}>
                     <img src="./src/assets/VectorNavBar.png" alt="" />
                 </label>
-                <a href="/" className={styles.enlace}>
+                <a href="/HomeAdmin" className={styles.enlace}>
                     <img  className={styles.logo} src="./src/assets/logo.png" alt="Logo Unimmet" />
                 </a>
                 <ul className={styles.navList}>
