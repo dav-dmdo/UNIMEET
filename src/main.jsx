@@ -17,8 +17,7 @@ import EliminarCategoria from './pages/EliminarCategoria/EliminarCategoria.jsx';
 import AgregarCategoria from './pages/AgregarCategoria/AgregarCategoria.jsx';
 import AgregarAgrupacion from './pages/AgregarAgrupacion/AgregarAgrupacion.jsx';
 import EliminarAgrupacion from './pages/EliminarAgrupacion/EliminarAgrupacion.jsx';
-
-
+import HomeAdmin from './pages/HomeAdmin/HomeAdmin.jsx';
 
 import { UserProvider } from "./context/UserContext.jsx";
 import { Paypal } from './pages/Paypal/Paypal.jsx';
@@ -31,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="/HomeAdmin" element={<HomeAdmin />} />
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
               <Route path="/Categorias" element={<Categorias />} />
               <Route path="/IniciarSesion" element={<IniciarSesion />} />
