@@ -37,10 +37,10 @@
 
   @media (max-width: 950px) {
     .groupCardContainer {
-      grid-template-columns: 1fr; /* Una columna por fila en pantallas pequeñas */
-      display: flex; /* Utiliza flexbox para alinear los elementos */
-      flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente */
-      justify-content: center; /* Centra los elementos horizontalmente */
+      grid-template-columns: 1fr; 
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center; 
     }
   }
 
