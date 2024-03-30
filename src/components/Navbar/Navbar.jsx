@@ -10,7 +10,7 @@ export function Navbar(){
         // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 
         // si el usuario esta logeado o no
         
-    const {user, isLoading }= useContext(UserContext);
+    const {user, isLoading }= useContext(UserContext)
 
     const handleLogout = async () => {
         await logout();
@@ -44,7 +44,7 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> {user.name} </span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span> {user.displayName} </span></Link>
                             </li>
                             <li>
                             <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>

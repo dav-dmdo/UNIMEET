@@ -60,7 +60,7 @@ nav ul li{
     margin-top: 10px;
 }
 
-@media (max-width:900px){
+@media (max-width:980px){
     .checkbtn{
         display: block;
     }
@@ -68,7 +68,7 @@ nav ul li{
         position: fixed;
         left: 50%;
         width: 65%;
-        height: 450px;
+        height: 550px;
         background-color: white;
         top: 80px;
         text-align: center;
