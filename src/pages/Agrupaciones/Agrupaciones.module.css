@@ -21,3 +21,10 @@
       line-height: 7.845px; /* 25% */
   }
   
+    .groupCardContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Dos columnas por fila */
+        gap: 30px; /* Espacio entre las GroupCard */
+        width: 100%; /* Ajustar el ancho al 100% */
+    }
+
