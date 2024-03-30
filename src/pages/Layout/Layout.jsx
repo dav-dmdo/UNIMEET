@@ -15,15 +15,6 @@ export function Layout() {
           <Footer />
         </footer>
         </UsuarioContextProvider>
-      <UsuarioContextProvider>
-        <Navbar />
-        <section className="body">
-          <Outlet />
-        </section>
-        <footer>
-          <Footer />
-        </footer>
-        </UsuarioContextProvider>
     </main>
   );
 }
