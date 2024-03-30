@@ -1,7 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import  styles from "./Navbar.module.css"
 
+import { logout } from "../../data/services/auth";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
+
 export function Navbar(){
+        // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
+        // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 
+        // si el usuario esta logeado o no
+        
+    const {user, isLoading }= useContext(UserContext)
+
+    const handleLogout = async () => {
+        await logout();
+    }
 
     return(
         <header>
@@ -27,13 +40,31 @@ export function Navbar(){
                     <li>
                     <Link className={styles.Link} to={'/Agrupaciones'} ><span>Mis Agrupaciones</span></Link>
                     </li>
-                    <li>
-                    <Link to="/UserPage" >
+                    
+                    {!!user &&(
+                        <>
+                            <li>
+                                <Link className={styles.Link} to={'/UserPage'}><span> {user.displayName} </span></Link>
+                            </li>
+                            <li>
+                            <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>
+                            </li>
+                        </>
+                    )}
+                    {!user &&(
+                        <>
+                        <li>
+                        <Link to="/UserPage" >
                         <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
                         </Link>
                     <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
 
-                    </li>
+                        </li>
+                        </>
+                    )}
+                    
+
+                    
                     
                     
                 </ul>
