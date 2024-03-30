@@ -19,10 +19,10 @@ export default function AgregarAgrupacion(){
     });
   };
 
-  
+
     return(
         <div className={styles.cuerpo}>
-         <h1>Agregar Agrupacion</h1>
+         <h1 className={styles.titulo}>Agregar Agrupacion</h1>
 
         <div className={styles.containerGlobal}>
             <div className={styles.containerLeft}>

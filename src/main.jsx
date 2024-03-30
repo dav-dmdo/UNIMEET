@@ -16,6 +16,7 @@ import User from './pages/User/User.jsx';
 import EliminarCategoria from './pages/EliminarCategoria/EliminarCategoria.jsx';
 import AgregarCategoria from './pages/AgregarCategoria/AgregarCategoria.jsx';
 import AgregarAgrupacion from './pages/AgregarAgrupacion/AgregarAgrupacion.jsx';
+import EliminarAgrupacion from './pages/EliminarAgrupacion/EliminarAgrupacion.jsx';
 
 
 
@@ -41,7 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path='/UserPage' element={<UserPage />}/>
               <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
               <Route path='/AgregarAgrupacion' element={<AgregarAgrupacion/>}/>
-
+              <Route path='/EliminarAgrupacion' element={<EliminarAgrupacion/>}/>
               <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
               <Route path='/ModificarCategoria' element={<ModificarCategoria />}/>
               <Route path='/Paypal' element={<Paypal />}/>
