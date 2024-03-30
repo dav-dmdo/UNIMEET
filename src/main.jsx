@@ -23,6 +23,7 @@ import EliminarAgrupacion from './pages/EliminarAgrupacion/EliminarAgrupacion.js
 import { UserProvider } from "./context/UserContext.jsx";
 import { Paypal } from './pages/Paypal/Paypal.jsx';
 import ModificarCategoria from './pages/Modificar categoria/ModificarCategoria.jsx';
+import ModificarAgrupacion from './pages/ModificarAgrupacion/ModificarAgrupacion.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -42,6 +43,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path='/UserPage' element={<UserPage />}/>
               <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
               <Route path='/AgregarAgrupacion' element={<AgregarAgrupacion/>}/>
+              <Route path='/ModificarAgrupacion' element={<ModificarAgrupacion/>}/>
               <Route path='/EliminarAgrupacion' element={<EliminarAgrupacion/>}/>
               <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
               <Route path='/ModificarCategoria' element={<ModificarCategoria />}/>
