@@ -32,10 +32,12 @@ const handleSingWithGoogle = async () => {
   navigate("/")
 }
   return (
+
+    
     
     <div className={styles.containerGlob}>
       <div className={styles.container}>
-        <form className={styles.form} >
+        <form className={styles.form} onSubmit={onSubmit}>
           <h1 className={styles.title}>¡Bienvenido de vuelta!</h1>
           
 
@@ -45,6 +47,7 @@ const handleSingWithGoogle = async () => {
             name="email"
             id="email"
             placeholder="Correo electrónico"
+            onChange= {handleOnChange}
             
           />
           </div>
@@ -55,6 +58,7 @@ const handleSingWithGoogle = async () => {
             name="password"
             id="password"
             placeholder="Contraseña"
+            onChange= {handleOnChange}
             
           />
          </div>
