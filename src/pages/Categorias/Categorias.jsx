@@ -43,26 +43,7 @@ export  function Categorias() {
 
 ))}
   </div>
-  <div className={styles.adminBox}>
-  <div className={styles.button}>
-      <img className={styles.image} src="./src/assets/Agregar.png" alt="" onClick={changePageAgg}/>
-        <div className={styles.textName}>
-          <p>Nueva Categoría</p>
-          </div>
-    </div>
-    <div className={styles.button}>
-      <img className={styles.image} src="./src/assets/Eliminar.png" alt="" onClick={changePageDel} />
-        <div className={styles.textName}>
-          <p>Eliminar Categoría</p>
-          </div>
-    </div>
-    <div className={styles.button}>
-      <img className={styles.image} src="./src/assets/Actualizar.png" alt="" onClick={changePageMod} />
-        <div className={styles.textName}>
-          <p>Editar Categoría</p>
-          </div>
-    </div>
-  </div>
+  
   
 </div>
   
