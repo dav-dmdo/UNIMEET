@@ -40,49 +40,6 @@ export default function ModificarCategoria() {
       await updateDoc(categoryDocRef, { nombre: modifiedCategoryName }); // Update category name
       console.log('Category name updated successfully.');
   
-<<<<<<< HEAD
-      for (const agrupacion of selectedAgrupaciones) {
-        const agrupacionQuery = query(collection(db, 'agrupaciones'), where('nombre', '==', agrupacion));
-      // Query all agrupaciones
-// Query all agrupaciones
-const agrupacionesSnapshot = await getDocs(collection(db, 'agrupaciones'));
-
-agrupacionesSnapshot.forEach(async (agrupacionDoc) => {
-    const agrupacionData = agrupacionDoc.data();
-    let currentCategoria = agrupacionData.categoria ? agrupacionData.categoria : ''; // Check if categoria field exists
-    
-    // Normalize case for comparison
-    const selectedCategoryLower = selectedCategory.toLowerCase();
-    const modifiedCategoryNameLower = modifiedCategoryName.toLowerCase();
-    
-    // Remove occurrences of the modified category (old name) from the array
-    let currentCategoriesArray = currentCategoria.split(', ').map(category => category.toLowerCase());
-    currentCategoriesArray = currentCategoriesArray.filter(category => category !== selectedCategoryLower);
-
-    // If this agrupacion is selected, add the modified category (new name)
-    if (selectedAgrupaciones.includes(agrupacionData.nombre)) {
-        // Add the modified category (new name) if it's not already present
-        if (!currentCategoriesArray.includes(modifiedCategoryNameLower)) {
-            currentCategoriesArray.push(modifiedCategoryNameLower);
-        }
-    }
-
-    // Join the remaining categories back into a string
-    const updatedCategoria = currentCategoriesArray.join(', ');
-
-    // Update agrupacion's categoria field
-    await updateDoc(agrupacionDoc.ref, { categoria: updatedCategoria });
-
-    console.log(`Agrupacion ${agrupacionDoc.id} updated successfully.`);
-});
-
-
-    }
-    
-    
-    
-    
-=======
       // Update documents in the "agrupaciones" collection
       for (const agrupacion of selectedAgrupaciones) {
         const agrupacionQuery = query(collection(db, 'agrupaciones'), where('nombre', '==', agrupacion));
@@ -108,7 +65,6 @@ agrupacionesSnapshot.forEach(async (agrupacionDoc) => {
         // Update agrupacion's categoria field
         await updateDoc(agrupacionDocRef, { categoria: updatedCategoria });
       }
->>>>>>> b03c1f2 (:heart: Modified Category)
   
       // Update documents in the "categorias" collection to reflect changes in agrupaciones
       await updateDoc(categoryDocRef, { agrupaciones: selectedAgrupaciones });
