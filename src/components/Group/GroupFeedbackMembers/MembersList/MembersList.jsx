@@ -14,7 +14,7 @@ const MembersList = ({members}) => {
   return (
     <div className={styles.container}>
         {members.length > 0 ? (members.map((member, index) => (
-            <MembersItem key={index} {...member} num={index+1}/>
+            <MembersItem key={index} {...member} num={index+1} name={member}/>
         ))): (
             <MembersItem
             name={"--"}

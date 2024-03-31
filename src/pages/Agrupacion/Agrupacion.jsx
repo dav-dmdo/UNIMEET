@@ -7,6 +7,7 @@ import JoinGroup from "../../components/Group/JoinGroup/JoinGroup";
 import { connectStorageEmulator } from "@firebase/storage";
 import { addCommentToGroup } from "../../data/services/groups";
 
+
 const Agrupacion = () => {
   const { groupToShow, setGroupToShow, user } = useContext(UserContext);
   if (!groupToShow) {
@@ -69,6 +70,7 @@ const Agrupacion = () => {
         groupImg={imageLogo || "https://via.placeholder.com/300x300"}
         groupEmail={email || "correodeejemplo@gmail.com"}
         groupIg={instagram || "@igejemplo"}
+        groupName={name}
       />
 
       <GroupFeedbackMembers

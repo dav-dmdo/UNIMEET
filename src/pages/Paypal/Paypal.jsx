@@ -2,12 +2,17 @@ import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import styles from "./Paypal.module.css";
+import { useNavigate } from "react-router-dom";
 
 
 export function Paypal() {
     const paypalClientID = "AYs5IpQ_d-bnfxXF9ZzcbkG4k_0g4ykp2_xxAkylV7PIr1m7zD2ddodCLkpMcyAivmNO21qCWRAAjLkb";
     const [selectedAmount, setSelectedAmount] = useState("10.00");
     const [paypalVisible, setPaypalVisible] = useState(true); 
+
+    const navigate = useNavigate();
+
+  
 
     const handleChangeAmount = (e) => {
         setSelectedAmount(e.target.value);
@@ -16,6 +21,8 @@ export function Paypal() {
 
     const handleVectorImgClick = () => {
         setPaypalVisible(false);
+        navigate(-1)
+
         document.querySelector('.vectorImg').classList.add('clicked');
     };
 
