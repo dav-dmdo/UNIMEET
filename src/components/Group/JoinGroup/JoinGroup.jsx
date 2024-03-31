@@ -37,7 +37,7 @@ const JoinGroup = ({ groupIg, groupEmail, groupImg }) => {
           <textarea
           className={styles.commentTextArea}
             type="text"
-            placeholder="¿por qué estás interesado en unirte a esta agrupacion?"
+            placeholder="¿Por qué estás interesado en unirte a esta agrupacion?"
             value={comment}
             onChange={handleCommentChange}
           />

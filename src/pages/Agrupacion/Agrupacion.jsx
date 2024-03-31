@@ -4,8 +4,14 @@ import GroupFeedbackMembers from "../../components/Group/GroupFeedbackMembers/Gr
 import GroupImage from "../../components/Group/GroupImage/GroupImage";
 import GroupMisionVision from "../../components/Group/GroupMisionVision/GroupMisionVision";
 import JoinGroup from "../../components/Group/JoinGroup/JoinGroup";
+import { connectStorageEmulator } from "@firebase/storage";
+import { addCommentToGroup } from "../../data/services/groups";
+
 const Agrupacion = () => {
-  const { groupToShow } = useContext(UserContext);
+  const { groupToShow, setGroupToShow, user } = useContext(UserContext);
+  if (!groupToShow) {
+    return <div>Cargando...</div>;
+  }
   const {
     nombre: name,
     year,
@@ -16,7 +22,10 @@ const Agrupacion = () => {
     imgYear: imageYear,
     imgForm: imageLogo,
     email,
+    comments,
+    integrantes,
   } = groupToShow;
+
   const groupMision =
     mision ||
     "Misión del grupo     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatum at obcaecati beatae sit tenetur ducimus nam mollitia! A ullam neque asperiores assumenda debitis suscipit exercitationem consequatur totam ratione. Nisi!";
@@ -24,117 +33,20 @@ const Agrupacion = () => {
     vision ||
     "Visión del grupo     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi voluptatum at obcaecati beatae sit tenetur ducimus nam mollitia! A ullam neque asperiores assumenda debitis suscipit exercitationem consequatur totam ratione. Nisi!";
 
-  const messages = [
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-    { sender: "Alice", content: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
-    {
-      sender: "Bob",
-      content: "¡Hola Alice! Estoy bien, ¿y tú?",
-      timestamp: "10:05 AM",
-    },
-    {
-      sender: "Alice",
-      content: "Yo también estoy bien, gracias.",
-      timestamp: "10:10 AM",
-    },
-  ];
+    const onAddComment = async (comment) => {
+      if (!name || !user?.displayName || !comment) return;
+      await addCommentToGroup(name, user?.displayName, comment);
+      
+      setGroupToShow(prevGroup => ({
+          ...prevGroup,
+          comments: [...prevGroup.comments, {
+              user: user?.displayName,
+              comment: comment,
+              date: new Date().toISOString().slice(0, 10),
+          }]
+      }));
+  };
 
-  const members = [
-    {
-      name: "Alice",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "Bob",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "Charlie",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "David",
-      img: "",
-    },
-    {
-      name: "Eve",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "Alice",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "Bob",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "Charlie",
-      img: "https://via.placeholder.com/150",
-    },
-    {
-      name: "David",
-      img: "",
-    },
-    {
-      name: "Eve",
-      img: "https://via.placeholder.com/150",
-    },
-  ];
   return (
     <>
       <GroupImage
@@ -159,7 +71,11 @@ const Agrupacion = () => {
         groupIg={instagram || "@igejemplo"}
       />
 
-      <GroupFeedbackMembers messages={messages} members={members} />
+      <GroupFeedbackMembers
+        messages={comments}
+        members={integrantes}
+        onAddComment={onAddComment}
+      />
     </>
   );
 };
