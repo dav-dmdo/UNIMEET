@@ -95,7 +95,6 @@ export default function User() {
                 </p>
             </div>
           </label>
-          
           </div>
         </div>
         </div>
