@@ -7,7 +7,6 @@ export function RegistrarUsuario() {
   const [formData, setFormData] = useState({
     
     email: '',
-    name: '',
     agrupaciones: []
   });
 
@@ -24,9 +23,16 @@ export function RegistrarUsuario() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    
     const {email, password, ...extraData} = formData;
-    await registerWithEmailAndPassword(formData.email, formData.password, extraData)
-    navigate('/')
+    if(email.includes("unimet.edu.ve")==true){
+      await registerWithEmailAndPassword(formData.email, formData.password, extraData)
+      navigate('/')
+    }else{
+      alert("Debe tener un correo de estudiante de la Universidad")
+    }
+    
+    
   };
     return(
     
