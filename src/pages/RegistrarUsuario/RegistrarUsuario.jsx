@@ -41,8 +41,8 @@ export function RegistrarUsuario() {
               <div className={styles.inputContainer}>
               <input
                 type="string"
-                name="nombre"
-                id="nombre"
+                name="name"
+                id="name"
                 placeholder="Nombre"
                 className={styles.enter}
                 onChange={handleOnChange}

@@ -54,7 +54,7 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> {user.name} </span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span> -{user.displayName }-</span></Link>
                             </li>
                             <li>
                             <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>
