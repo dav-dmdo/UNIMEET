@@ -6,7 +6,7 @@ export const singInWithGoogle = async () => {
 
     try {
         const result = await signInWithPopup(auth, googleProvider);
-        ;
+        
         
         if(result.user.email.includes("unimet.edu.ve")==true){
             await createUserProfile(result.user.uid, { email: result.user.email, name: result.user.displayName, agrupaciones: [] })
@@ -22,7 +22,7 @@ export const singInWithGoogle = async () => {
 
     }
 }
-//soy un comentario
+
 export const registerWithEmailAndPassword = async (email, password, extraData) => {
     try {
         const result = await createUserWithEmailAndPassword(auth, email, password)
