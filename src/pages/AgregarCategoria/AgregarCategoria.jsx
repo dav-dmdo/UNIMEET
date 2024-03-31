@@ -25,7 +25,6 @@ const onSubmit = async () => {
   try {
     const nombre = formData.nombre.trim(); // Remove leading and trailing whitespace
     if (!nombre) {
-      console.error('Nombre de la Categoría is empty');
       return;
     }
     const customId = nombre.toLowerCase().replace(/\s+/g, '-');
