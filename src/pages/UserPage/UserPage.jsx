@@ -88,6 +88,7 @@ export default function User() {
             <div className={styles.information}>
               <p className={styles.txt}>{userData.carnet}</p>
             </div>
+          </label>
           </div>
         </div>
       </div>
