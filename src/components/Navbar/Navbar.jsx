@@ -11,6 +11,7 @@ export function Navbar(){
         // si el usuario esta logeado o no
         
     const {user, isLoading }= useContext(UserContext)
+    console.log(user)
 
     const handleLogout = async () => {
         await logout();

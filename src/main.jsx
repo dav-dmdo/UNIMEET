@@ -23,6 +23,7 @@ import { UserProvider } from "./context/UserContext.jsx";
 import { Paypal } from './pages/Paypal/Paypal.jsx';
 import ModificarCategoria from './pages/Modificar categoria/ModificarCategoria.jsx';
 import ModificarAgrupacion from './pages/ModificarAgrupacion/ModificarAgrupacion.jsx';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute.jsx';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -33,12 +34,25 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/" element={<Home />} />
               <Route path="/HomeAdmin" element={<HomeAdmin />} />
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
-              <Route path="/Categorias" element={<Categorias />} />
+              <Route path="/Categorias" element={
+              <PrivateRoute>
+                <Categorias />
+              </PrivateRoute>
+
+              } />
               <Route path="/IniciarSesion" element={<IniciarSesion />} />
               <Route path="/RegistrarUsuario" element={<RegistrarUsuario />} />
-              <Route path="/Agrupaciones" element={<Agrupaciones />} />
+              <Route path="/Agrupaciones" element={
+              <PrivateRoute>
+                  <Agrupaciones />
+              </PrivateRoute>
+              } />
               <Route path="/ListadoAgrupaciones" element={<ListadoAgrupaciones />} />
-              <Route path="/agrupacion" element={<Agrupacion />} />
+              <Route path="/agrupacion" element={
+              <PrivateRoute>
+                <Agrupacion />
+            </PrivateRoute>
+              } />
               <Route path="/User" element={<User />} />
               <Route path='/UserPage' element={<UserPage />}/>
               <Route path='/AgregarCategoria' element={<AgregarCategoria/>}/>
@@ -48,6 +62,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path='/EliminarCategoria' element={<EliminarCategoria />}/>
               <Route path='/ModificarCategoria' element={<ModificarCategoria />}/>
               <Route path='/Paypal' element={<Paypal />}/>
+              
           </Route>
         </Routes>
       </BrowserRouter>

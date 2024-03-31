@@ -15,8 +15,14 @@ export  function IniciarSesion() {
   const onSubmit = async (event) => {
     event.preventDefault();
     const {email, password}= formData;
-    navigate("/")
-    await loginWithEmailAndPassword(email,password)
+    if(email.includes("unimet.edu.ve")==true){
+      
+      navigate("/")
+      await loginWithEmailAndPassword(email,password)
+    }else{
+      alert("Debe tener un correo de estudiante de la Universidad")
+    }
+    
     
     
   };
