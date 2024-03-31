@@ -144,13 +144,15 @@ agrupacionesSnapshot.forEach(async (agrupacionDoc) => {
           </div>
           {selectedCategory && (
             <div className={styles.selectContainer}>
-              <input
-                type="text"
-                value={modifiedCategoryName}
-                onChange={(e) => setModifiedCategoryName(e.target.value)}
-                placeholder="Nuevo nombre de categoría"
-              />
-              <span className={styles.text}>Agrupaciones disponibles</span>
+              <div className={styles.inputContainer}>
+  <input
+    type="text"
+    value={modifiedCategoryName}
+    onChange={(e) => setModifiedCategoryName(e.target.value)}
+    placeholder="Nuevo nombre de categoría"
+  />
+  <span className={styles.text}>Agrupaciones disponibles</span>
+</div>
               {/* Use the MultipleSelector component */}
               <MultipleSelector
                 options={agrupaciones.filter((agrupacion) => agrupacion.categoria === selectedCategory)}
