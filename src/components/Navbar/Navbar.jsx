@@ -15,13 +15,32 @@ export function Navbar(){
         // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
         // porque el aurtenticador de google tarda unos segundos en resolver la peticion donde se verifica 
         // si el usuario esta logeado o no
-        
+    const navigate = useNavigate()
+
     const {user, isLoading }= useContext(UserContext)
-    
+    const [userName, setUserName] = useState('');
 
     const handleLogout = async () => {
         await logout();
+        navigate('/')
     }
+
+     useEffect(() => {
+    const fetchUserGroups = async () => {
+      try {
+        const userProfile = await getUserProfile(user.email);
+        if (userProfile) {
+          setUserName(userProfile.name);
+          
+        }
+      } catch (error) {
+        console.log(error)     
+      }
+    }; if (user) {
+      fetchUserGroups();
+    }
+  }, [user]);
+    
 
     return(
         <header>
@@ -51,10 +70,10 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> -{user.displayName }-</span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span> - {userName} - </span></Link>
                             </li>
                             <li>
-                            <button className={styles.boton} type="button" onClick={handleLogout}>Salir</button>
+                            <button className={styles.boton} type="button" onClick={handleLogout}>Log Out</button>
                             </li>
                         </>
                     )}

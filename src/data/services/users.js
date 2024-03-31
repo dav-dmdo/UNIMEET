@@ -36,3 +36,21 @@ export async function updateUserGroup (uid, agrupaciones){
     }
 
 }
+
+export async function getUserAdmin (uid){
+    const documentoRef = doc(collection(db, 'users'), uid);
+    const documento = await getDoc(documentoRef);
+    
+    if (!documento.exists) {
+      throw new Error('El documento no existe.');
+    }
+
+    else{
+        if (documento.data().isAdmin === true){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+}

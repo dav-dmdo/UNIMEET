@@ -16,9 +16,15 @@ export  function IniciarSesion() {
     event.preventDefault();
     const {email, password}= formData;
     if(email.includes("unimet.edu.ve")==true){
-      
-      navigate("/")
-      await loginWithEmailAndPassword(email,password)
+      if (email == "adminunimeet@correo.unimet.edu.ve"){
+        localStorage.setItem('admin', true)
+        navigate("/HomeAdmin")
+        await loginWithEmailAndPassword(email,password)
+      }
+      else{
+        navigate("/")
+        await loginWithEmailAndPassword(email,password)
+      }
     }else{
       alert("Debe tener un correo de estudiante de la Universidad")
     }

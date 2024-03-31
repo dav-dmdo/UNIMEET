@@ -8,7 +8,7 @@ export function RegistrarUsuario() {
   const [formData, setFormData] = useState({
     
     email: '',
-    agrupaciones: []
+    agrupaciones: [],
   });
 
   const handleSingWithGoogle = async () => {
