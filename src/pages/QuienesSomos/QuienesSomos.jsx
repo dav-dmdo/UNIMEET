@@ -34,7 +34,7 @@ export  function QuienesSomos() {
               <img src="./src/assets/VisionLogo.png" className={styles.imgVision} alt="Img Vision" />
             </div>
             <div className={styles.infoTarjeta}>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati enim repellendus sit officiis iusto rerum dignissimos facere saepe debitis totam esse vel reiciendis numquam suscipit aspernatur id nulla, pariatur nesciunt!</p>
+            <p className={styles.texto}>Consolidar una plataforma virtual dinámica que se convierta en una referencia para los estudiantes de la UNIMET en busca de participar en agrupaciones. El objetivo de “UNIMEET” es convertirse en un medio para descubrir diversas agrupaciones estudiantiles, donde cada estudiante pueda encontrar una agrupación que se ajuste a sus intereses, contribuyendo así a su desarrollo integral y a la construcción de una verdadera comunidad universitaria.</p>
             </div>
         </div>
         <div className={styles.linea2}></div>
