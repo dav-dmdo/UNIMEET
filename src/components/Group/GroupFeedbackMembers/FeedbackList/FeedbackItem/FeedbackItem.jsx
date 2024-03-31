@@ -1,12 +1,12 @@
 
 import styles from './FeedbackItem.module.css';
 
-const FeedbackItem = ({ sender, content, timestamp }) => {
+const FeedbackItem = ({ user, comment, date }) => {
   return (
     <div className={styles.feedbackItem}>
-      <div className={styles.sender}>{sender}</div>
-      <div className={styles.content}>{content}</div>
-      <div className={styles.timestamp}>{timestamp}</div>
+      <div className={styles.sender}>{user}</div>
+      <div className={styles.content}>{comment}</div>
+      <div className={styles.timestamp}>{date}</div>
     </div>
   );
 };

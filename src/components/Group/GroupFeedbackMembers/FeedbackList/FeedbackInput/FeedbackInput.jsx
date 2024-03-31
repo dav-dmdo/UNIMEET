@@ -1,14 +1,17 @@
-
 import { useTextInput } from "../../../../../hooks/useTextInput";
 import styles from "./FeedbackInput.module.css";
 
 const FeedbackInput = ({ onAddComment }) => {
-  const {comment, handleCommentChange, setValue:setComment} = useTextInput("");
+  const {
+    value: comment,
+    onChange: handleCommentChange,
+    setValue: setComment,
+  } = useTextInput("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onAddComment(comment);
     if (comment.trim() !== "") {
-      onAddComment(comment);
       setComment("");
     }
   };
