@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { Selector } from '../../componets/Selector/Selector';
 import useCategories from '../../controllers/Hooks/useCategories';
 import styles from './EliminarCategoria.module.css';
-
 export default function EliminarCategoria() {
   const categorias = useCategories();
   const [formData, setFormData] = useState({
@@ -21,6 +20,7 @@ export default function EliminarCategoria() {
       [name]: value,
     });
   };
+
   const onSubmit = async () => {
     try {
       const nombre = formData.nombre.trim().toLowerCase(); // Convert to lowercase
@@ -30,52 +30,22 @@ export default function EliminarCategoria() {
         return;
       }
   
-      // Delete document from the 'categorias' collection
-      const documentRef = doc(collection(db, 'categorias'), nombre);
-      const docSnap = await getDoc(documentRef);
-      if (docSnap.exists()) {
-        await deleteDoc(documentRef);
-        console.log('Document deleted successfully from "categorias":', nombre);
+      // Query documents from the 'categorias' collection where 'nombre' matches
+      const categoriasQuery = query(collection(db, 'categorias'), where('nombre', '==', nombre));
+      const categoriasSnapshot = await getDocs(categoriasQuery);
+  
+      if (!categoriasSnapshot.empty) {
+        // If there are matching documents, delete them
+        await Promise.all(categoriasSnapshot.docs.map(async (doc) => {
+          await deleteDoc(doc.ref);
+          console.log('Document deleted successfully from "categorias":', doc.id);
+        }));
+  
+        console.log('Documents deleted successfully from "categorias"');
       } else {
         console.error('Document does not exist in "categorias":', nombre);
         return;
       }
-  
-      // Fetch documents from the 'agrupaciones' collection
-      const agrupacionesQuery = query(collection(db, 'agrupaciones'));
-      const agrupacionesSnapshot = await getDocs(agrupacionesQuery);
-// Update each document in 'agrupaciones' to remove the deleted category from the concatenated string
-await Promise.all(agrupacionesSnapshot.docs.map(async (doc) => {
-  let categoria = doc.data().categoria || ''; // Handle the case where 'categoria' is undefined
-
-  // Split the categoria string by ', '
-  let categories = categoria.split(', ').map(item => item.trim());
-
-  // Trim nombre
-  const trimmedNombre = nombre.trim().toLowerCase(); // Normalize nombre
-
-  // Filter out the deleted category
-  categories = categories.filter(item => item.toLowerCase() !== trimmedNombre);
-
-  // Join the remaining categories back into a single string
-  let updatedCategoria = categories.join(', ');
-
-  // Handle the case when the deleted category is the last one in the string
-  if (categoria.toLowerCase().endsWith(trimmedNombre)) {
-    updatedCategoria = categories.join(', '); // Reassign to avoid extra spaces
-  }
-
-  console.log('Document ID (agrupaciones):', doc.id);
-  console.log('Old categoria (agrupaciones):', categoria);
-  console.log('Updated categoria (agrupaciones):', updatedCategoria);
-
-  // Update the document in Firestore with the updated categoria field
-  await updateDoc(doc.ref, { categoria: updatedCategoria });
-  console.log(`Categoria removed from document ${doc.id} in "agrupaciones"`);
-}));
-
-
-
   
       // Clear the form data
       setFormData({ nombre: '', agrupaciones: [] });
@@ -86,7 +56,6 @@ await Promise.all(agrupacionesSnapshot.docs.map(async (doc) => {
       console.error('Error deleting document:', error);
     }
   };
-  
   
   return (
     <div className={styles.mainBox}>
@@ -118,3 +87,4 @@ await Promise.all(agrupacionesSnapshot.docs.map(async (doc) => {
     </div>
   );
 }
+
