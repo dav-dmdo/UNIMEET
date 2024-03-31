@@ -40,6 +40,7 @@ export default function ModificarCategoria() {
       await updateDoc(categoryDocRef, { nombre: modifiedCategoryName }); // Update category name
       console.log('Category name updated successfully.');
   
+<<<<<<< HEAD
       for (const agrupacion of selectedAgrupaciones) {
         const agrupacionQuery = query(collection(db, 'agrupaciones'), where('nombre', '==', agrupacion));
       // Query all agrupaciones
@@ -81,6 +82,33 @@ agrupacionesSnapshot.forEach(async (agrupacionDoc) => {
     
     
     
+=======
+      // Update documents in the "agrupaciones" collection
+      for (const agrupacion of selectedAgrupaciones) {
+        const agrupacionQuery = query(collection(db, 'agrupaciones'), where('nombre', '==', agrupacion));
+        const agrupacionSnapshot = await getDocs(agrupacionQuery);
+        if (agrupacionSnapshot.empty) {
+          console.error(`Agrupacion document with name ${agrupacion} doesn't exist.`);
+          continue; // Skip this agrupacion and proceed to the next one
+        }
+        const agrupacionDocRef = agrupacionSnapshot.docs[0].ref;
+        
+        // Update agrupacion's categoria field
+        await updateDoc(agrupacionDocRef, { categoria: modifiedCategoryName });
+        console.log(`Agrupacion ${agrupacion} updated successfully.`);
+  
+        // Get current categoria of the agrupacion
+        const agrupacionData = agrupacionSnapshot.docs[0].data();
+        let currentCategoria = agrupacionData.categoria ? agrupacionData.categoria : ''; // Check if categoria field exists
+        const updatedCategoria = currentCategoria.split(', ')
+                                                  .filter(category => category.toLowerCase() !== selectedCategory.toLowerCase())
+                                                  .concat(modifiedCategoryName.toLowerCase())
+                                                  .join(', ');
+  
+        // Update agrupacion's categoria field
+        await updateDoc(agrupacionDocRef, { categoria: updatedCategoria });
+      }
+>>>>>>> b03c1f2 (:heart: Modified Category)
   
       // Update documents in the "categorias" collection to reflect changes in agrupaciones
       await updateDoc(categoryDocRef, { agrupaciones: selectedAgrupaciones });
