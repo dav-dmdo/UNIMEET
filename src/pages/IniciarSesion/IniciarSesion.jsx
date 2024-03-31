@@ -35,7 +35,6 @@ export  function IniciarSesion() {
 
          <div className={styles.loginAltern}>
           <button ><img src="./src/assets/google.png" alt="" /></button>
-          
          </div>
 
         <button type="submit" className={styles.submitBtn}>
