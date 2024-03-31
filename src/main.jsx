@@ -33,7 +33,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/HomeAdmin" element={<HomeAdmin />} />
-              <Route path="/QuienesSomos" element={<QuienesSomos />} />
+              <Route path="/QuienesSomos" element={
+              <PrivateRoute>
+                <QuienesSomos />
+              </PrivateRoute>
+              } />
               <Route path="/Categorias" element={
               <PrivateRoute>
                 <Categorias />
@@ -47,7 +51,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   <Agrupaciones />
               </PrivateRoute>
               } />
-              <Route path="/ListadoAgrupaciones" element={<ListadoAgrupaciones />} />
+              <Route path="/ListadoAgrupaciones" element={
+              <PrivateRoute>
+                <ListadoAgrupaciones />
+              </PrivateRoute>
+              } />
               <Route path="/agrupacion" element={
               <PrivateRoute>
                 <Agrupacion />
