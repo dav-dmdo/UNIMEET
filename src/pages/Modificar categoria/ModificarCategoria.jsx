@@ -4,7 +4,7 @@ import { Selector } from '../../componets/Selector/Selector';
 import useCategories from '../../controllers/Hooks/useCategories';
 import styles from './ModificarCategoria.module.css';
 import useGroups from '../../controllers/Hooks/useGroups';
-import { updateDoc, collection, doc } from 'firebase/firestore';
+import { updateDoc, collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../data/firebase';
 import { MultipleSelector } from '../../componets/Selector/MultipleSelector';
 
@@ -26,28 +26,57 @@ export default function ModificarCategoria() {
       if (!selectedCategory) {
         throw new Error('Please select a category.');
       }
-
+  
+      // Find category document by name
+      const categorySnapshot = await getDocs(collection(db, 'categorias'));
+      const categoryDoc = categorySnapshot.docs.find(doc => doc.data().nombre.toLowerCase() === selectedCategory.toLowerCase());
+      if (!categoryDoc) {
+        throw new Error(`Category document with name ${selectedCategory} doesn't exist.`);
+      }
+      const categoryName = categoryDoc.data().nombre; // Get the name of the category document
+  
       // Update category document in Firestore
-      const categoryDocRef = doc(db, 'categorias', selectedCategory);
-      await updateDoc(categoryDocRef, { nombre: modifiedCategoryName });
+      const categoryDocRef = doc(db, 'categorias', categoryDoc.id);
+      await updateDoc(categoryDocRef, { nombre: modifiedCategoryName }); // Update category name
       console.log('Category name updated successfully.');
-
+  
       // Update documents in the "agrupaciones" collection
-
-      // For each selected agrupacion, update its categoria field
-      selectedAgrupaciones.forEach(async (agrupacionId) => {
-        const agrupacionDocRef = doc(db, 'agrupaciones', agrupacionId);
+      for (const agrupacion of selectedAgrupaciones) {
+        const agrupacionQuery = query(collection(db, 'agrupaciones'), where('nombre', '==', agrupacion));
+        const agrupacionSnapshot = await getDocs(agrupacionQuery);
+        if (agrupacionSnapshot.empty) {
+          console.error(`Agrupacion document with name ${agrupacion} doesn't exist.`);
+          continue; // Skip this agrupacion and proceed to the next one
+        }
+        const agrupacionDocRef = agrupacionSnapshot.docs[0].ref;
+        
+        // Update agrupacion's categoria field
         await updateDoc(agrupacionDocRef, { categoria: modifiedCategoryName });
-        console.log(`Agrupacion ${agrupacionId} updated successfully.`);
-      });
-
+        console.log(`Agrupacion ${agrupacion} updated successfully.`);
+  
+        // Get current categoria of the agrupacion
+        const agrupacionData = agrupacionSnapshot.docs[0].data();
+        let currentCategoria = agrupacionData.categoria ? agrupacionData.categoria : ''; // Check if categoria field exists
+        const updatedCategoria = currentCategoria.split(', ')
+                                                  .filter(category => category.toLowerCase() !== selectedCategory.toLowerCase())
+                                                  .concat(modifiedCategoryName.toLowerCase())
+                                                  .join(', ');
+  
+        // Update agrupacion's categoria field
+        await updateDoc(agrupacionDocRef, { categoria: updatedCategoria });
+      }
+  
+      // Update documents in the "categorias" collection to reflect changes in agrupaciones
+      await updateDoc(categoryDocRef, { agrupaciones: selectedAgrupaciones });
+  
       // Navigate to the desired route after successful modification
       navigate('/agrupaciones');
     } catch (error) {
       console.error('Error updating category and agrupaciones:', error);
     }
   };
-
+  
+  
   return (
     <div className={styles.mainBox}>
       <div className={styles.circle}>

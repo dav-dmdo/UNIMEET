@@ -6,7 +6,17 @@ export const singInWithGoogle = async () => {
 
     try {
         const result = await signInWithPopup(auth, googleProvider);
-        await createUserProfile(result.user.uid, { email: result.user.email, name: result.user.displayName, agrupaciones: [] })
+        ;
+        
+        if(result.user.email.includes("unimet.edu.ve")==true){
+            await createUserProfile(result.user.uid, { email: result.user.email, name: result.user.displayName, agrupaciones: [] })
+        }else{
+            alert("Debe tener un correo de estudiante de la Universidad")
+            await logout();
+            
+
+        }
+        
     } catch (error) {
         console.log(error)
 
