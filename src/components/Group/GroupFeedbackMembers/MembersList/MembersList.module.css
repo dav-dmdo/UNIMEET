@@ -6,4 +6,6 @@
     margin-bottom: 16px;
     max-height: 400px; 
     overflow-y: auto; 
+    font: Roboto;
+    font-weight: 700;
 }

@@ -97,3 +97,8 @@
 .submitButton:hover{
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.error{
+    font: Roboto;
+    color: var(--color-primary);
+}
