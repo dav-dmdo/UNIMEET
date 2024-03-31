@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.2.0",
-    "firebase": "^10.9.0",
+    "firebase": "^10.10.0",
     "firebase-tools": "^13.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
