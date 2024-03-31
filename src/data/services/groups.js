@@ -32,3 +32,30 @@ export const addCommentToGroup = async (groupName, currentUser, comment) => {
 };
 
 export default addCommentToGroup;
+
+export async function updateGroupMembers (groupName, userName, state){
+    const documentoRef = doc(collection(db, 'agrupaciones'), groupName);
+    const documento = await getDoc(documentoRef);
+    const integrantes = documento.data().integrantes
+    
+    if (!documento.exists) {
+      throw new Error('El documento no existe.');
+    }
+
+    else{
+        let updatedIntegrantes = [...integrantes];
+
+        if (state) {
+            updatedIntegrantes = updatedIntegrantes.filter((integrante) => integrante !== userName);
+          } else {
+            updatedIntegrantes.push(userName);
+          }
+      
+          const data = { integrantes: updatedIntegrantes };
+          await updateDoc(documentoRef, data);
+
+
+        await updateDoc(documentoRef, data);
+    }
+
+}

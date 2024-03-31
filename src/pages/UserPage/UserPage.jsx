@@ -1,104 +1,96 @@
-import { useEffect } from "react";
-import { useUser } from "../../hooks/useUser";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../data/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import styles from "./UserPage.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../../hooks/useUser";
+
 export default function User() {
   const { user, userIsLoading } = useUser();
+  const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // If user data is not loading and user email is available, we can proceed with rendering
-    if (!userIsLoading && user.email) {
-      return;
-    }
-  }, [user, userIsLoading]);
+    const fetchUserData = async () => {
+      try {
+        if (user && user.email) {
+          const userCollectionRef = collection(db, "users");
+          const q = query(userCollectionRef, where("email", "==", user.email));
+          const querySnapshot = await getDocs(q);
 
-  const changePage = async () => {
-    navigate("/User");
-  };
+          if (querySnapshot && !querySnapshot.empty) {
+            const userDataFromSnapshot = querySnapshot.docs[0].data();
+            setUserData(userDataFromSnapshot);
+          } else {
+            console.log("User document not found in Firestore.");
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
 
-  // If user data is still loading, show a loading indicator
-  if (userIsLoading) {
+    fetchUserData();
+  }, [user]);
+
+  if (userIsLoading || !userData) {
     return <p>Loading...</p>;
   }
 
-        
-        
-    {/*TODO - Remove the //*/}
   return (
-
     <div className={styles.userCard}>
-        <div className={styles.leftside}>
-        <img className={styles.image} src="./src/assets/userPage.png" alt="" />
+      <div className={styles.leftside}>
+        <img className={styles.image} src={userData.img} alt="User" />
         <div className={styles.textName}>
-         {/*   <p>{user.name}</p>*/}
-            
+          <p>{userData.name}</p>
         </div>
-        <button type="submit" className={styles.submitBtn} onClick={changePage} >
+        <button
+          type="button"
+          className={styles.submitBtn}
+          onClick={() => navigate("/User")}
+        >
           Editar Perfil
         </button>
-        </div>
-       
-        <div className={styles.rightside}>
+      </div>
+      <div className={styles.rightside}>
         <div className={styles.titles}>
-            <h1>Datos Personales</h1>
+          <h1>Datos Personales</h1>
         </div>
         <div className={styles.text}>
-        
-
-            {/*SECTION -  EMAIL*/}
-            <div className={styles.inputContainer}>
+          <div className={styles.inputContainer}>
             <label htmlFor="email">
-            <span>Correo electrónico*</span>
+              <span>Correo electrónico*</span>
+            </label>
             <div className={styles.information}>
-            <p className={styles.txt}>
-                    {user.email}
-                </p>
+              <p className={styles.txt}>{userData.email}</p>
             </div>
-          </label>
-          
           </div>
-
-          {/*SECTION -  TELEFONO*/}
           <div className={styles.inputContainer}>
-          <label htmlFor="phoneNum">
-            <span>Número de Teléfono</span>
+            <label htmlFor="phoneNum">
+              <span>Número de Teléfono</span>
+            </label>
             <div className={styles.information}>
-            <p className={styles.txt}>
-                     {/*   <p>{user.numero}</p>*/}
-                </p>
-                </div>
-          </label>
-          
-          </div>
-
-          {/*SECTION -  CARRERA*/}
-          <div className={styles.inputContainer}>
-          <label htmlFor="carrera">
-            <span>Carrera</span>
-            <div className={styles.information}>
-                <p className={styles.txt}>
-                       {/*   <p>{user.carrera}</p>*/}
-                </p>
+              <p className={styles.txt}>{userData.phoneNum}</p>
             </div>
-          </label>
-          
           </div>
-
-          {/*SECTION CARNET */}
           <div className={styles.inputContainer}>
-          <label htmlFor="carnet">
-            <span>Carnet</span>
+            <label htmlFor="carrera">
+              <span>Carrera</span>
+            </label>
             <div className={styles.information}>
-            <p className={styles.txt}>
-                      {/*   <p>{user.carnet}</p>*/}
-                </p>
+              <p className={styles.txt}>{userData.carrera}</p>
             </div>
-          </label>
-          
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor="carnet">
+              <span>Carnet</span>
+            </label>
+            <div className={styles.information}>
+              <p className={styles.txt}>{userData.carnet}</p>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }
