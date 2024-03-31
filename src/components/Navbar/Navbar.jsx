@@ -5,6 +5,11 @@ import { logout } from "../../data/services/auth";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 
+//Resolviendo los imports de las imagenes
+import VectorNavBar from "../../assets/VectorNavBar.png"; // Importa la imagen VectorNavBar
+import logo from "../../assets/logo.png"; // Importa la imagen logo
+import UserIcon from "../../assets/User.png"; // Importa la imagen UserIcon
+
 
 export function Navbar(){
         // la variable de isLoading es un estado que se encarga de verificar si el usuario esta cargando o no
@@ -24,10 +29,10 @@ export function Navbar(){
             <nav className={styles.navbar}>
                 <input type="checkbox" id={styles.check} />
                 <label htmlFor={styles.check} className={styles.checkbtn}>
-                    <img src="./src/assets/VectorNavBar.png" alt="" />
+                    <img src={VectorNavBar} alt="" />
                 </label>
                 <a href="/" className={styles.enlace}>
-                    <img  className={styles.logo} src="./src/assets/logo.png" alt="Logo Unimmet" />
+                    <img  className={styles.logo} src={logo} alt="Logo Unimmet" />
                 </a>
                 <ul className={styles.navList}>
                     <li>
@@ -57,7 +62,7 @@ export function Navbar(){
                         <>
                         <li>
                         <Link to="/UserPage" >
-                        <img id={styles.perfil} className={styles.image} src="./src/assets/User.png" alt="" />
+                        <img id={styles.perfil} className={styles.image} src={UserIcon} alt="" />
                         </Link>
                     <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log In</span></Link>
 
