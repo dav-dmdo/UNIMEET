@@ -5,7 +5,6 @@ import { UserContext } from '../../context/UserContext';
 import { useContext } from 'react';
 import {getUserProfile} from '/src/data/services/users.js'
 import React, { useState, useEffect } from 'react';
-import useGroups from "../../controllers/Hooks/useGroups";
 
 
 export function Agrupaciones() {
@@ -15,8 +14,26 @@ export function Agrupaciones() {
   const [userName, setUserName]=useState(null);
   const { setGroupToShow } = useContext(UserContext);
   const navigate = useNavigate();
-  const groups=useGroups();
-  console.log(groups)
+  const {user, isLoading}=useContext(UserContext);
+  const [userGroups, setUserGroups]=useState(null);
+
+  useEffect(() => {
+    const fetchUserGroups = async () => {
+      try {
+        const userProfile = await getUserProfile(user.email); 
+        if (userProfile) {
+          setUserGroups(userProfile.agrupaciones); 
+          console.log(userProfile)
+        }
+      } catch (error) {
+        console.log(error); 
+      }
+    };
+  
+    if (user) {
+      fetchUserGroups();
+    }
+  }, [user]);
 
   useEffect(() => {
     const fetchUserGroups = async () => {

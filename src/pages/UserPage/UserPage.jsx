@@ -89,6 +89,45 @@ export default function User() {
               <p className={styles.txt}>{userData.carnet}</p>
             </div>
           </label>
+          
+          </div>
+
+          {/*SECTION -  TELEFONO*/}
+          <div className={styles.inputContainer}>
+          <label htmlFor="phoneNum">
+            <span>Número de Teléfono</span>
+            <div className={styles.information}>
+            <p className={styles.txt}>
+                     {/*   <p>{user.numero}</p>*/}
+                </p>
+                </div>
+          </label>
+          
+          </div>
+
+          {/*SECTION -  CARRERA*/}
+          <div className={styles.inputContainer}>
+          <label htmlFor="carrera">
+            <span>Carrera</span>
+            <div className={styles.information}>
+                <p className={styles.txt}>
+                       {/*   <p>{user.carrera}</p>*/}
+                </p>
+            </div>
+          </label>
+          
+          </div>
+
+          {/*SECTION CARNET */}
+          <div className={styles.inputContainer}>
+          <label htmlFor="carnet">
+            <span>Carnet</span>
+            <div className={styles.information}>
+            <p className={styles.txt}>
+                      {/*   <p>{user.carnet}</p>*/}
+                </p>
+            </div>
+          </label>
           </div>
         </div>
       </div>
