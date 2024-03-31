@@ -68,7 +68,7 @@ nav ul li{
         position: fixed;
         left: 50%;
         width: 65%;
-        height: 550px;
+        height: 550px !important;
         background-color: white;
         top: 80px;
         text-align: center;
@@ -94,7 +94,14 @@ header{
 }
 
 
-
+.boton{
+    font-family: Roboto;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 16px;
+}
 
 /* header {
     background-color: white;

@@ -24,7 +24,7 @@ export function Agrupaciones() {
         const userProfile = await getUserProfile(user.email); 
         if (userProfile) {
           setUserGroups(userProfile.agrupaciones); 
-          setUserName(userProfile.nombre);
+          setUserName(userProfile.name);
         }
       } catch (error) {
         console.log(error); 
@@ -57,7 +57,7 @@ export function Agrupaciones() {
           {console.log("grupos")}
           {console.log(userGroups)}
           <section className={styles.middlebox}>
-          <h1 className={styles.title}>¡Hola {userName}!</h1>
+          <h1 className={styles.title}>¡Hola, {userName}!</h1>
           <h2 className={styles.description}>Tus agrupaciones actuales son:</h2>       
           <div className={styles.groupCardContainer}>
           {userGroups.map((userGroup, index) => {

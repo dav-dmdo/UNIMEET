@@ -8,7 +8,7 @@ export function RegistrarUsuario() {
   const [formData, setFormData] = useState({
     
     email: '',
-    agrupaciones: []
+    agrupaciones: [],
   });
 
   const handleSingWithGoogle = async () => {
@@ -49,8 +49,8 @@ export function RegistrarUsuario() {
               <div className={styles.inputContainer}>
               <input
                 type="string"
-                name="nombre"
-                id="nombre"
+                name="name"
+                id="name"
                 placeholder="Nombre"
                 className={styles.enter}
                 onChange={handleOnChange}
