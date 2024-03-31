@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from "./IniciarSesion.module.css"
 import { Link, useNavigate } from "react-router-dom";
-import { loginWithEmailAndPassword , singInWithGoogle} from "../../data/services/auth";
+import { loginWithEmailAndPassword , singInWithGoogle2} from "../../data/services/auth";
 import {createUserProfile} from "../../data/services/users"
 
 export  function IniciarSesion() {
@@ -42,7 +42,7 @@ export  function IniciarSesion() {
 };
 
 const handleSingWithGoogle = async () => {
-  await singInWithGoogle()
+  await singInWithGoogle2()
   navigate("/")
 }
   return (

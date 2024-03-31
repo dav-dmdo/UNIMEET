@@ -22,6 +22,28 @@ export const singInWithGoogle = async () => {
 
     }
 }
+export const singInWithGoogle2 = async () => {
+
+    try {
+        const result = await signInWithPopup(auth, googleProvider);
+        
+        
+        if(result.user.email.includes("unimet.edu.ve")==true){
+            
+        }else{
+            alert("Debe tener un correo de estudiante de la Universidad")
+            await logout();
+            
+
+        }
+        
+    } catch (error) {
+        console.log(error)
+
+    }
+}
+
+
 
 export const registerWithEmailAndPassword = async (email, password, extraData) => {
     try {
