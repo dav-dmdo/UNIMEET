@@ -3,7 +3,8 @@ import  styles from "./Navbar.module.css"
 
 import { logout } from "../../data/services/auth";
 import { UserContext } from "../../context/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { getUserProfile } from "../../data/services/users";
 
 //Resolviendo los imports de las imagenes
 import VectorNavBar from "../../assets/VectorNavBar.png"; // Importa la imagen VectorNavBar
@@ -70,7 +71,7 @@ export function Navbar(){
                     {!!user &&(
                         <>
                             <li>
-                                <Link className={styles.Link} to={'/UserPage'}><span> - {userName} - </span></Link>
+                                <Link className={styles.Link} to={'/UserPage'}><span>{userName}</span></Link>
                             </li>
                             <li>
                             <button className={styles.boton} type="button" onClick={handleLogout}>Log Out</button>
