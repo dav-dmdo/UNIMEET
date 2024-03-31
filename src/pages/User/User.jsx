@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../hooks/useUser";
 
 import { db, storage } from "../../data/firebase";
-import { collection, getDocs, query, where, updateDoc } from "firebase/firestore";
+import { collection, getDocs, query, where, updateDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 export default function User() {
@@ -57,7 +57,6 @@ export default function User() {
   };
   
   
-  
   const updateUser = async () => {
     try {
       // Generate unique image ID
@@ -65,18 +64,25 @@ export default function User() {
       const imageId = timestamp + '_' + imagePreview.name;
   
       // Upload image to Firebase Storage
-      console.log("Uploading image:", imagePreview); // Log the imagePreview before upload
-      console.log("Image type:", imagePreview.type); // Log the image type
       const storageRef = ref(storage, `user_images/${user.email}/${imageId}`);
       await uploadBytes(storageRef, imagePreview, { contentType: 'image/png' });
-      console.log("Image uploaded successfully!");
   
       // Get the download URL of the uploaded image
       const imageURL = await getDownloadURL(storageRef);
-      console.log("Download URL:", imageURL);
   
-      // Update user data in Firestore with the image URL
-      // Remaining code...
+      // Update user data in Firestore with the image URL and other information
+      const userDocRef = doc(db, "users", user.uid);
+      await updateDoc(userDocRef, {
+        imageURL: imageURL,
+        name: userData.name,
+        email: userData.email,
+        phoneNum: userData.phoneNum,
+        carrera: userData.carrera,
+        carnet: userData.carnet
+      });
+  
+      console.log("Image uploaded successfully and user data updated!");
+  
     } catch (error) {
       console.error("Error updating user information:", error);
     }
