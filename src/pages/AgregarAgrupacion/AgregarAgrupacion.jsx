@@ -84,13 +84,13 @@ const onClick = async () => {
     vision: vision,
     instagram: instagram,
     email: email,
-    categorias: selectedCategoria,
+    categoria: selectedCategoria,
   };
 
   try {
     await addDoc(collection(db, 'agrupaciones'), nuevaAgrupacion);
     console.log('Agrupación añadida con éxito');
-    
+
     setNombre('');
     setMision('');
     setVision('');
