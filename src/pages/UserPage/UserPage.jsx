@@ -42,7 +42,7 @@ export default function User() {
       <div className={styles.leftside}>
       <img 
     className={styles.image} 
-    src={userData.imgURL ? userData.imgURL: "./src/assets/userPage.png"} 
+    src={userData.imgURL ? userData.imgURL: "https://firebasestorage.googleapis.com/v0/b/unimeet-is.appspot.com/o/00201b99e4a1ffbbc449e2779bdc22a3.png?alt=media&token=05b320f7-f51e-4104-b7da-87af9c047183"} 
     alt="User" 
 />
 
