@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from "./QuienesSomos.module.css"
+
+
 export  function QuienesSomos() {
   return (
     <div className={styles.contenedorPrincipal}>

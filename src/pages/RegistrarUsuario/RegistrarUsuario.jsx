@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styles from "./RegistrarUsuario.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import { registerWithEmailAndPassword, singInWithGoogle } from '../../data/services/auth';
+import SignUp from "../../assets/SignUp.png"
+import google from "../../assets/google.png"
 
 export function RegistrarUsuario() {
   const navigate = useNavigate()
@@ -39,7 +41,7 @@ export function RegistrarUsuario() {
     return(
     
         <div className={styles.containerGlob}>
-        <img src="./src/assets/SignUp.png" alt="" />
+        <img src={SignUp} alt="" />
 
           <div className={styles.container}>
             <form className={styles.form} onSubmit={onSubmit}>
@@ -78,7 +80,7 @@ export function RegistrarUsuario() {
              </div>
     
              <div className={styles.loginAltern}>
-              <button type="button" onClick={handleSingWithGoogle}><img src="./src/assets/google.png" alt="" /></button>
+              <button type="button" onClick={handleSingWithGoogle}><img src={google} alt="" /></button>
               
              </div>
     

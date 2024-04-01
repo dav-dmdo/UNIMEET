@@ -3,6 +3,8 @@ import styles from "./IniciarSesion.module.css"
 import { Link, useNavigate } from "react-router-dom";
 import { loginWithEmailAndPassword , singInWithGoogle2} from "../../data/services/auth";
 import {createUserProfile} from "../../data/services/users"
+import google from "../../assets/google.png"
+import imgIniciarSesion from "../../assets/imgIniciarSesion.png"
 
 export  function IniciarSesion() {
 
@@ -84,7 +86,7 @@ const handleSingWithGoogle = async () => {
           <button 
             type="button"
             onClick={handleSingWithGoogle}
-          ><img src="./src/assets/google.png" alt="" /></button>
+          ><img src={google} alt="" /></button>
           
          </div>
 
@@ -98,7 +100,7 @@ const handleSingWithGoogle = async () => {
         </Link>
       </form>
       </div>
-      <img src="./src/assets/imgIniciarSesion.png" alt="" />
+      <img src={imgIniciarSesion} alt="" />
 
     </div>
   )

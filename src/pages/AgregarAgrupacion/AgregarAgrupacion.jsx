@@ -72,7 +72,7 @@ const verificarAgrupacion = async (agrupacionNueva) => {
   const onClick = async () => {
 
     if (
-      verificarAgrupacion!= false
+      verificarAgrupacion(agrupacionNueva)!= false
     ){
 
     alert('el nombre de la agrupacion ya existe cree otro');
