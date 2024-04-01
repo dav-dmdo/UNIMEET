@@ -59,9 +59,9 @@ const handleEmail = (e) => {
 
 
 // Función para verificar si un usuario ya existe
-const verificarAgrupacion = async (agrupacionNueva) => {
+const verificarAgrupacion = async (nuevaAgrupacion) => {
   try {
-    const verificar = query(collection(db, 'agrupacion'), where('nombre', '==', agrupacionNueva));
+    const verificar = query(collection(db, 'agrupacion'), where('nombre', '==', nuevaAgrupacion));
     const querySnapshot = await getDocs(verificar);
     return !querySnapshot.empty;
   } catch (error) {
@@ -69,43 +69,37 @@ const verificarAgrupacion = async (agrupacionNueva) => {
   }
 };
 
-  const onClick = async () => {
-
-    if (
-      verificarAgrupacion(agrupacionNueva)!= false
-    ){
-
-    alert('el nombre de la agrupacion ya existe cree otro');
+const onClick = async () => {
+  // Verificar si la agrupación ya existe
+  const existeAgrupacion = await verificarAgrupacion(nombre);
+  if (existeAgrupacion) {
+    alert('El nombre de la agrupación ya existe. Por favor, elija otro nombre.');
     return;
   }
 
-    // Creamos un objeto con los datos de la nueva agrupacion 
-    const nuevaAgrupacion= {
-      nombre: nombre,
-      mision: mision,
-      vision:vision,
-      instagram:instagram,
-      email: email,
-      categorias: selectedCategoria,
-    };
-
-    try {
-
-      await addDoc(collection(db, 'agrupaciones'), nuevaAgrupacion);
-      console.log('Agrupacion añadida con exito');
-
-      // Limpiamos los campos del formulario después de agregar el usuario
-      setNombre('');
-      setMision('');
-      setVision('');
-      setInstagram('');
-      setEmail('');
-
-    } catch (error) {
-      console.error('Error al añadir la agrupacion', error);
-    }
+  // Continuar con el proceso de agregar la agrupación
+  const nuevaAgrupacion = {
+    nombre: nombre,
+    mision: mision,
+    vision: vision,
+    instagram: instagram,
+    email: email,
+    categorias: selectedCategoria,
   };
 
+  try {
+    await addDoc(collection(db, 'agrupaciones'), nuevaAgrupacion);
+    console.log('Agrupación añadida con éxito');
+    
+    setNombre('');
+    setMision('');
+    setVision('');
+    setInstagram('');
+    setEmail('');
+  } catch (error) {
+    console.error('Error al añadir la agrupación:', error);
+  }
+};
 
     return(
       
