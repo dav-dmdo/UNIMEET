@@ -120,7 +120,10 @@ export default function User() {
         <button
           type="button"
           className={styles.submitBtn}
-          onClick={updateUser}
+          onClick={() =>{
+            updateUser
+            navigate("/UserPage")
+          }}
         >
           Guardar cambios
         </button>
