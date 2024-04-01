@@ -13,6 +13,7 @@ export function Navbar(){
         
     const {user, isLoading }= useContext(UserContext)
     
+    
 
     const handleLogout = async () => {
         await logout();
