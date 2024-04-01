@@ -19,8 +19,7 @@ export function Navbar(){
     const navigate = useNavigate()
 
     const {user, isLoading }= useContext(UserContext)
-    
-    
+    const [userName, setUserName] = useState('');
 
     const handleLogout = async () => {
         await logout();
