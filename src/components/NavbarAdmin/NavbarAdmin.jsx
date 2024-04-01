@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import  styles from "./NavbarAdmin.module.css"
 import { logout } from "../../data/services/auth";
+import VectorNavBar from "../../assets/VectorNavBar.png"
+import logo from "../../assets/logo.png"
 
 
 export function NavbarAdmin(){
@@ -18,10 +20,10 @@ export function NavbarAdmin(){
             <nav className={styles.navbar}>
                 <input type="checkbox" id={styles.check} />
                 <label htmlFor={styles.check} className={styles.checkbtn}>
-                    <img src="./src/assets/VectorNavBar.png" alt="" />
+                    <img src={VectorNavBar} alt="" />
                 </label>
                 <a href="/HomeAdmin" className={styles.enlace}>
-                    <img  className={styles.logo} src="./src/assets/logo.png" alt="Logo Unimmet" />
+                    <img  className={styles.logo} src={logo} alt="Logo Unimmet" />
                 </a>
                 <ul className={styles.navList}>
                     <li>
