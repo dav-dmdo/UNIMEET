@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import styles from "./Paypal.module.css";
 import { useNavigate } from "react-router-dom";
-import VectorImage from '../../assets/VectorImage.png'
+import VectorImage from "../../assets/VectorImage.png"
+
 
 export function Paypal() {
     const paypalClientID = "AYs5IpQ_d-bnfxXF9ZzcbkG4k_0g4ykp2_xxAkylV7PIr1m7zD2ddodCLkpMcyAivmNO21qCWRAAjLkb";
