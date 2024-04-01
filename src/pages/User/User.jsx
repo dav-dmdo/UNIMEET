@@ -6,6 +6,7 @@ import { useUser } from "../../hooks/useUser";
 import { db, storage } from "../../data/firebase";
 import { collection, getDocs, query, where, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import Userpage from "../../assets/userPage.png"
 
 export default function User() {
   const { user, userIsLoading } = useUser();
@@ -91,7 +92,7 @@ export default function User() {
       <div className={styles.leftside}>
         <img
           className={styles.image}
-          src={imagePreview ? imagePreview : "./src/assets/userPage.png"}
+          src={imagePreview ? imagePreview : {Userpage}}
           alt=""
         />
         <div>

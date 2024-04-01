@@ -6,6 +6,9 @@ import { GroupCard } from '../../components/GroupCard/GroupCard';
 import { useNavigate } from "react-router-dom";
 
 import styles from "./HomeAdmin.module.css";
+import agregar from "../../assets/Agregar.png"
+import eliminar from "../../assets/Eliminar.png"
+import actualizar from "../../assets/Actualizar.png"
 
 
 
@@ -71,14 +74,14 @@ export default function HomeAdmin() {
           <h1 className={styles.principal}>Opciones</h1>
           <div className={styles.preguntas}>
             <div className={styles.block1}>
-            <button className={styles.boton1} onClick={handleAgregarAgrupacion}><img src='./src/assets/Agregar.png' className={styles.image}></img>Agregar Agrupación</button>
-            <button className={styles.boton2} onClick={handleEliminarAgrupacion}><img src='./src/assets/Eliminar.png' className={styles.image}></img>Eliminar Agrupación</button>
-            <button className={styles.boton3} onClick={handleActualizarAgrupacion}><img src='./src/assets/Actualizar.png' className={styles.image}></img>Modificar Agrupación</button>
+            <button className={styles.boton1} onClick={handleAgregarAgrupacion}><img src={agregar} className={styles.image}></img>Agregar Agrupación</button>
+              <button className={styles.boton2} onClick={handleEliminarAgrupacion}><img src={eliminar} className={styles.image}></img>Eliminar Agrupación</button>
+            <button className={styles.boton3} onClick={handleActualizarAgrupacion}><img src={actualizar} className={styles.image}></img>Modificar Agrupación</button>
         </div>
         <div className={styles.block2}>
-            <button className={styles.boton4} onClick={handleAgregarCategoria}><img src='./src/assets/Agregar.png' className={styles.image}></img>Agregar Categoría</button>
-            <button className={styles.boton5} onClick={handleEliminarCategoria}><img src='./src/assets/Eliminar.png' className={styles.image}></img>Eliminar Categoría</button>
-            <button className={styles.boton6} onClick={handleActualizarCategoria}><img src='./src/assets/Actualizar.png' className={styles.image}></img>Modificar Categoría</button>
+            <button className={styles.boton4} onClick={handleAgregarCategoria}><img src={agregar} className={styles.image}></img>Agregar Categoría</button>
+            <button className={styles.boton5} onClick={handleEliminarCategoria}><img src={eliminar} className={styles.image}></img>Eliminar Categoría</button>
+            <button className={styles.boton6} onClick={handleActualizarCategoria}><img src={actualizar} className={styles.image}></img>Modificar Categoría</button>
             </div>
             </div>
         </div>
