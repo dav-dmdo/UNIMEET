@@ -40,7 +40,12 @@ export default function User() {
   return (
     <div className={styles.userCard}>
       <div className={styles.leftside}>
-        <img className={styles.image} src={userData.img} alt="User" />
+      <img 
+    className={styles.image} 
+    src={userData.imgURL ? userData.imgURL: "./src/assets/userPage.png"} 
+    alt="User" 
+/>
+
         <div className={styles.textName}>
           <p>{userData.name}</p>
         </div>
