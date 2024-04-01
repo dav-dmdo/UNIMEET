@@ -41,11 +41,11 @@ const handleEliminar = () => {
     return;
   }
 
-  else if (selectedGroup.integrantes.length === 0){
+  else if (selectedGroup.integrantes.length !== 0){
     alert('Por favor recuerde que las agrupaciones a eliminar no pueden tener integrantes activos')
     return;
   }
-
+ 
   deleteGroup(selectedGroup);
 
   console.log(selectedGroup.integrantes)  
@@ -60,9 +60,6 @@ async function deleteGroup (group){
     if (!documento.exists) {
       throw new Error('El documento no existe.');
     }
-
-    
-
     
     await deleteDoc(documentoRef);
 
