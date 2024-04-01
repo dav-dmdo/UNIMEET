@@ -1,7 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import  styles from "./NavbarAdmin.module.css"
+import { logout } from "../../data/services/auth";
+
 
 export function NavbarAdmin(){
+    const navigate = useNavigate()
+
+    const handleLogout = async () => {
+        await logout();
+        navigate('/')
+        window.location.reload()
+    }
 
     return(
         <header>
@@ -22,8 +31,12 @@ export function NavbarAdmin(){
                     <Link className={styles.Link} to={'/ListadoAgrupaciones'} ><span>Agrupaciones</span></Link>
                     </li>
                     <li>
-                    <Link className={styles.Link} to={"/IniciarSesion"} ><span>Log Out</span></Link>
+                         <Link className={styles.Link}><span> Administrador </span></Link>
                     </li>
+                    <li>
+                     <button className={styles.boton} type="button" onClick={handleLogout}>Log Out</button>
+                    </li>
+                    
                     
                     
                 </ul>

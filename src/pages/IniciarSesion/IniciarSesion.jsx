@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from "./IniciarSesion.module.css"
 import { Link, useNavigate } from "react-router-dom";
-import { loginWithEmailAndPassword , singInWithGoogle} from "../../data/services/auth";
+import { loginWithEmailAndPassword , singInWithGoogle2} from "../../data/services/auth";
 import {createUserProfile} from "../../data/services/users"
+import google from "../../assets/google.png"
+import imgIniciarSesion from "../../assets/imgIniciarSesion.png"
 
 export  function IniciarSesion() {
 
@@ -16,9 +18,15 @@ export  function IniciarSesion() {
     event.preventDefault();
     const {email, password}= formData;
     if(email.includes("unimet.edu.ve")==true){
-      
-      navigate("/")
-      await loginWithEmailAndPassword(email,password)
+      if (email == "adminunimeet@correo.unimet.edu.ve"){
+        localStorage.setItem('admin', true)
+        navigate("/HomeAdmin")
+        await loginWithEmailAndPassword(email,password)
+      }
+      else{
+        navigate("/")
+        await loginWithEmailAndPassword(email,password)
+      }
     }else{
       alert("Debe tener un correo de estudiante de la Universidad")
     }
@@ -36,7 +44,7 @@ export  function IniciarSesion() {
 };
 
 const handleSingWithGoogle = async () => {
-  await singInWithGoogle()
+  await singInWithGoogle2()
   navigate("/")
 }
   return (
@@ -78,7 +86,7 @@ const handleSingWithGoogle = async () => {
           <button 
             type="button"
             onClick={handleSingWithGoogle}
-          ><img src="./src/assets/google.png" alt="" /></button>
+          ><img src={google} alt="" /></button>
           
          </div>
 
@@ -92,7 +100,7 @@ const handleSingWithGoogle = async () => {
         </Link>
       </form>
       </div>
-      <img src="./src/assets/imgIniciarSesion.png" alt="" />
+      <img src={imgIniciarSesion} alt="" />
 
     </div>
   )

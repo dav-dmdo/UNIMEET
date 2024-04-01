@@ -94,7 +94,14 @@ header{
     background-color: white;
 }
 
-
+.boton{
+    font-family: Roboto;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 16px;
+}
 
 
 /* header {
