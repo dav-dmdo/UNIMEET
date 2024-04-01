@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import styles from "./Paypal.module.css";
 import { useNavigate } from "react-router-dom";
-
+import VectorImage from '../../assets/VectorImage.png'
 
 export function Paypal() {
     const paypalClientID = "AYs5IpQ_d-bnfxXF9ZzcbkG4k_0g4ykp2_xxAkylV7PIr1m7zD2ddodCLkpMcyAivmNO21qCWRAAjLkb";
@@ -30,7 +30,7 @@ export function Paypal() {
         <PayPalScriptProvider options={{ "client-id": paypalClientID }}>
             {paypalVisible && (
                 <div className={styles.box}>
-                    <img className={styles.vectorImg} src="src\assets\VectorImage.png" alt="" onClick={handleVectorImgClick} />
+                    <img className={styles.vectorImg} src={VectorImage} alt="" onClick={handleVectorImgClick} />
                     <div className={styles.title}>
                         Agradecemos su <span className={styles.colaboracion}>colaboración</span>
                     </div>
