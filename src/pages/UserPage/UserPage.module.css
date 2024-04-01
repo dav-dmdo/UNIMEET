@@ -130,3 +130,39 @@ margin: 2%;
     text-align: left;
     width: auto;
 }
+
+@media only screen and (max-width: 768px) {
+    .image {
+        border-radius: 50%; /* Adjusted for responsiveness on phones */
+    }
+
+    .titles {
+        width: 90vw; /* Changed to viewport width for responsiveness */
+        max-width: 466.56px; /* Added max-width */
+    }
+
+    .inputContainer label {
+        width: 90vw; /* Changed to viewport width for responsiveness */
+        max-width: 186px; /* Added max-width */
+    }
+
+    .submitBtn {
+        width: 90vw; /* Changed to viewport width for responsiveness */
+        max-width: 186px; /* Added max-width */
+    }
+
+    .inputContainer input {
+        width: 90vw; /* Changed to viewport width for responsiveness */
+        max-width: 450px; /* Added max-width */
+    }
+
+    .userCard {
+        flex-direction: column; /* Change flex direction to column for smaller screens */
+        align-items: center; /* Center align items for smaller screens */
+    }
+
+    .rightside {
+        padding-left: 0; /* Remove left padding for smaller screens */
+        margin-top: 5%; /* Add margin-top for smaller screens */
+    }
+}
